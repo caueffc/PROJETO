@@ -35,7 +35,8 @@
                     <img src="roupas/cart.png" alt="Carrinho">
                     <span id="cart-count">0</span> <!-- Número de itens no carrinho -->
                 </a>
-                <img src="images/menu.png" class="menu-button" alt="Menu"/>
+                <a href="login.html" class="login-button">Login</a> <!-- Botão de login próximo ao carrinho -->
+                <img src="imagens/menu.png" class="menu-button" alt="Menu"/>
                 <div id="site-info-modal" class="modal">
                     <div class="modal-content">
                         <span class="close-button">&times;</span>
@@ -52,7 +53,9 @@
             <div class="header-bottom-side-left scroll-animation">
                 <h2>Transforme Seu Estilo <span class="Fitzin">fitness</span> <br>com a SheFit</h2>
                 <p>Experimente a combinação perfeita de conforto e desempenho...</p>
+                <div class="button-container"></div>
                 <a href="#produtos" class="button">VEJA NOSSOS PRODUTOS</a>
+            </div>
             </div>
             <div class="header-bottom-side-center">
                 <!-- Imagem central pode ser adicionada aqui -->
@@ -153,7 +156,7 @@
             </div>
         </div>
     </section>
-
+<hr>
     <section id="suporte">
         <h2>Suporte ao Cliente</h2>
         <p>Se você tiver alguma dúvida ou precisar de ajuda, preencha o formulário abaixo:</p>
@@ -170,7 +173,6 @@
             <button type="submit">Enviar</button>
         </form>
     </section>
-
     <footer>
         <div class="footer-container">
             <div class="footer-section about">
@@ -186,6 +188,7 @@
                     <li><a href="index.html#top">Voltar ao topo</a></li>
                 </ul>
             </div>
+            
             <div class="footer-section contato">
                 <h2>Contato</h2>
                 <p><strong>Email:</strong> contato@shefit.com</p>
@@ -196,9 +199,7 @@
             <p>&copy; 2024 SheFit. Todos os direitos reservados.</p>
         </div>
     </footer>
-
-    <audio id="buy-sound" src="style/efeitos-sonoros-hd.mp3" preload="auto"></audio>
-
+    
 
 <script>
     let cartCount = 0; // Contador de itens no carrinho

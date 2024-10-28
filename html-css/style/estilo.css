@@ -207,14 +207,14 @@ nav ul li:hover {
 
 /* Estilo do header com imagem de fundo */
 header {
-    background-color: rgb(255, 255, 255);
-    background-image: url('html-css/style/academiacopy.png');
+    background-image: url('academiacopy.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
     display: flex;
     align-items: center;
+    text-align: center;
 }
 
 
@@ -233,7 +233,6 @@ header {
   font-optical-sizing: auto;
   font-style: normal;
   line-height: 0.002; /* Ajusta a altura da linha para diminuir o espaçamento interno */
-
 }
 
 
@@ -242,6 +241,7 @@ header {
 .header-bottom-side-left {
     flex-basis: 50%;
     padding: 2rem;
+    text-align: center;
 }
 
 .header-bottom-side-left h2 {
@@ -269,8 +269,6 @@ header {
     margin-left: 5rem;
     margin-top: 1rem;
     margin-bottom: 3rem;
-    
-   
 }
 /* Animação suave para a introdução */
 @keyframes fadeIn {
@@ -293,28 +291,31 @@ header {
     opacity: 1;
     transform: translateY(0);
 }
+
 }
+.button-container {
+    text-align: center; /* Centraliza o conteúdo dentro do contêiner */
+}
+
 .header-bottom-side-left .button {
-    
-    font-family: "Arial", sans-serif;
-    font-weight: bold;
-    display: -moz-stack;
-    background-color: #c6008c;;;
-    padding: 1.5rem 10.8rem;
+    display: inline-flex; /* Alinha o botão ao centro */
+    padding: 1.5rem 1.5rem;
+    background-color: #c6008c;
     border-radius: 9999px;
     color: rgb(255, 255, 255);
-    text-shadow: 1px 1px 1px #464444;
-    font-weight: 500;
-    font-size: 1rem;
+    text-shadow: 1px 1px 1px #b1a2a2;
+    font-weight: 150%;
+    font-size: 0.8rem;
     text-decoration: none;
     transition: all 0.3s;
     align-items: center;
     justify-content: center;
-    transition-duration: 0.5;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-   
+    max-width: 250px;
+    margin: 1rem auto; /* Centraliza o botão */
 }
+
+
+
 
 .header-bottom-side-left .button:hover {
     transition: all 0.5;
@@ -478,18 +479,7 @@ h3.section-titles {
         padding: 0.8rem;
     }
 }
-header {
-    position: relative;
-    background-image: url('../roupas/academia.png'); 
-    box-shadow: 100px 50px 50px #211e19;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    box-shadow: inset 50px 50px 50px 50px rgba(0, 0, 0, 0.5); /* Sombra interna apenas na parte inferior */
-}
+
 
 .header::after {
     content: "";
@@ -510,10 +500,6 @@ header::before {
     height: 100%;
     background: rgba(0, 0, 0, 0.3); /* Cor preta com 30% de opacidade */
     backdrop-filter: blur(3px); /* Desfoque de 10px */
-    box-shadow:inset 30px 100px #4c5449
-    box
-
-    
 }
 
 
@@ -816,26 +802,8 @@ font-style: normal;
     .redes-sociais a:hover {
         transform: scale(1.2);
     }
-    #cart-count {
-        background-color: red;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 50%;
-        position: absolute;
-        top: 0;
-        right: 0;
-        font-size: 14px;
-    }
-    .particle {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        background-color: #4CAF50; /* Cor da partícula */
-        border-radius: 50%; /* Forma de círculo */
-        opacity: 0.8;
-        pointer-events: none;
-        animation: particle-animation 1s forwards; /* Animação */
-    }
+   
+ 
     
     @keyframes particle-animation {
         0% {
@@ -911,6 +879,21 @@ font-style: normal;
 #support-form button:hover {
     background-color: #4cae4c; /* Cor de fundo ao passar o mouse */
 }
+.login-button {
+    color: white;
+    padding: 0.5rem 1rem; /* Ajuste o padding conforme necessário */
+    background-color: #c6008c; /* Cor de fundo */
+    text-decoration: none; /* Remove o sublinhado */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+.login-button:hover {
+    background-color: #a5006d; /* Cor ao passar o mouse */
+    color: white;
+}
+
+
+
 
 
 

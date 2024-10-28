@@ -1,0 +1,76 @@
+body {
+    background-color: #f8f8f8; /* Cor de fundo */
+    font-family: 'Oswald', sans-serif; /* Fonte usada no site */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Largura do formulário */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50; /* Cor do texto */
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #34495e; /* Cor do texto */
+}
+
+input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #3498db; /* Cor do contorno ao focar */
+    outline: none;
+}
+
+.login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db; /* Cor do botão */
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #2980b9; /* Cor do botão ao passar o mouse */
+}
+
+.signup-prompt {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.signup-prompt a {
+    color: #3498db; /* Cor do link */
+    text-decoration: none;
+}
+
+.signup-prompt a:hover {
+    text-decoration: underline; /* Sublinhar o link ao passar o mouse */
+}

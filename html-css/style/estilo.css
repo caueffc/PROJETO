@@ -455,7 +455,7 @@ h3.section-titles {
     .header-bottom-side {
         flex-direction: column;
         text-align: center;
-        padding-top: 4rem;
+        padding-top: 1%;
     }
 
     nav {
@@ -463,15 +463,6 @@ h3.section-titles {
         background-color:  #211e19;
         width: 100%;
         top: 43px;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        text-align: center;
-        padding: 0.8rem;
     }
 }
 

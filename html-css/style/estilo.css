@@ -455,7 +455,7 @@ h3.section-titles {
     .header-bottom-side {
         flex-direction: column;
         text-align: center;
-        padding-top: 1%;
+        padding-top: 1rem;
     }
 
     nav {
@@ -463,6 +463,15 @@ h3.section-titles {
         background-color:  #211e19;
         width: 100%;
         top: 43px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 0.8rem;
     }
 }
 
@@ -876,13 +885,11 @@ font-style: normal;
     background-color: #a5006d; /* Cor ao passar o mouse */
     color: white;
 }
-
-
-
-
-
-
-
+.search-container {
+    display: flex;
+    align-items: center;
+    
+}
 
 
     

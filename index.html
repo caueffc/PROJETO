@@ -29,17 +29,19 @@
                     <li data-content="contato">Contato</li>
                     <li data-content="sobre">Sobre</li>
                 </ul>
+                <form action="#" class="search-bar">
+                    <input type="text" id="search-input" placeholder="Buscar produtos...">
+                    <button type="button" id="search-button">🔍</button>
+                </form>
+            </nav>
             </nav>
             <div class="nav-icon-container">
                 <a href="carrinho.html">
+                    <img src="imagens/cart.png" alt="">
                 </a>
                 <a href="login.html" class="login-button">Login</a> <!-- Botão de login próximo ao carrinho -->
-                <div id="site-info-modal" class="modal">
-                    <div class="modal-content">
-                        <span class="close-button">&times;</span>
-                        <h2 id="modal-title">Bem-vindo à SheFit!</h2>
-                        <p id="modal-text">Este site oferece uma coleção incrível de roupas fitness de alta qualidade. Explore nossos produtos e descubra o que temos para ajudá-lo a se sentir confiante e confortável em sua jornada fitness.</p>
-                    </div>
+                
+                    
                 </div>
             </div>
         </div>
@@ -189,13 +191,18 @@
                 <h2>Contato</h2>
                 <p><strong>Email:</strong> contato@shefit.com</p>
                 <p><strong>Telefone:</strong> +55 11 99999-9999</p>
+                <a href="https://wa.me/5511999999999" target="_blank">
+                    <img src="imagens/10000484_processed.jpg" alt="WhatsApp da SheFit" style="width: 40px; height: auto;">
+                </a>
+                <a href="https://instagram.com/use.shefit/" target="_blank">
+                    <img src="imagens/logotipo-da-aplicacao-instagram-em-fundo-branco_1301901-2125_processed.png" alt="WhatsApp da SheFit" style="width: 40px; height: auto;">
+                </a>                
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2024 SheFit. Todos os direitos reservados.</p>
         </div>
     </footer>
-    
 
 <script>
     let cartCount = 0; // Contador de itens no carrinho
@@ -303,9 +310,29 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             count++; // Incrementa o contador
             cartCount.textContent = count; // Atualiza o contador no carrinho
+            
         });
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('search-input');
+    const products = document.querySelectorAll('.product');
+
+    searchInput.addEventListener('input', function() {
+        const searchTerm = searchInput.value.toLowerCase();
+
+        products.forEach(product => {
+            const productName = product.querySelector('.product-name').textContent.toLowerCase();
+            if (productName.includes(searchTerm)) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    });
+});
+
+
 </script>
 </body>
 </html>

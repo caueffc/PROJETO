@@ -249,12 +249,13 @@ header {
     display: flex;
     align-items: center;
     text-align: center;
+    
 }
 
 
 .header-inner-content-2 {
     position: absolute;
-    top: 50%;
+    top: 62%;
     left: 50%;
     transform: translate( -50%, -50%);
     text-align: center;
@@ -279,7 +280,7 @@ header {
 }
 
 .header-bottom-side-left h2 {
-    font-size: 75px;
+    font-size: 100px;
     font-family: 'Oswald', sans-serif;
     color: #fff;
     font-weight: 700;
@@ -966,6 +967,64 @@ font-style: normal;
     display: flex;
     align-items: center;
     
+    
+}
+/* Media Queries */
+@media (max-width: 800px) {
+    .search-container {
+        display: flex; /* Usar flexbox para melhor alinhamento */
+        justify-content: center; /* Centraliza o conteúdo do container */
+        margin: 1rem 0; /* Espaçamento acima e abaixo do container */
+    }
+
+    .search-input {
+        width: 70%; /* Ajustar a largura do campo de pesquisa */
+        padding: 0.5rem; /* Espaçamento interno */
+        border: 1px solid #ccc; /* Borda padrão */
+        border-radius: 5px; /* Bordas arredondadas */
+        font-size: 1rem; /* Tamanho da fonte */
+    }
+
+    .search-button {
+        background-color: #211e19; /* Cor de fundo do botão */
+        color: #fff; /* Cor do texto */
+        border: none; /* Remover borda padrão */
+        border-radius: 5px; /* Bordas arredondadas */
+        padding: 0.5rem 1rem; /* Espaçamento interno */
+        margin-left: 0.5rem; /* Espaço entre o campo de pesquisa e o botão */
+        cursor: pointer; /* Muda o cursor ao passar o mouse */
+        transition: background-color 0.3s; /* Efeito de transição para o fundo */
+    }
+
+    .search-button:hover {
+        background-color: #f00; /* Cor de fundo ao passar o mouse */
+    }
+}
+@media (max-width: 800px) {
+    .color-button-container {
+        display: flex; /* Usar flexbox para melhor alinhamento */
+        flex-wrap: wrap; /* Permitir que os botões se movam para a próxima linha */
+        justify-content: center; /* Centraliza os botões horizontalmente */
+        margin: 1rem 0; /* Espaço acima e abaixo do container */
+    }
+
+    .color-button {
+        width: 40px; /* Largura fixa para os botões de cor */
+        height: 40px; /* Altura fixa para os botões de cor */
+        border-radius: 50%; /* Formato circular */
+        margin: 0.5rem; /* Espaço entre os botões */
+        border: 2px solid transparent; /* Borda padrão */
+        cursor: pointer; /* Muda o cursor ao passar o mouse */
+        transition: border-color 0.2s; /* Efeito de transição para a borda */
+    }
+
+    .color-button:hover {
+        border-color: #000; /* Borda escura ao passar o mouse */
+    }
+
+    .color-button.active {
+        border-color: #f00; /* Borda vermelha para o botão ativo */
+    }
 }
 
 

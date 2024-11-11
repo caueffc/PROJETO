@@ -41,15 +41,6 @@
     margin-left: 20px;
 }
 
-.button {
-    background-color: #ff6200ea; /* Cor do botão */
-    color: white; /* Cor do texto do botão */
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
 
 .button:hover {
     background-color: #e62b00; /* Cor do botão ao passar o mouse */
@@ -284,7 +275,7 @@ header {
     font-family: 'Oswald', sans-serif;
     color: #fff;
     font-weight: 700;
-    margin-bottom: 1.2rem;
+    margin-bottom: 6.51rem;
     text-transform: uppercase;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
     letter-spacing: 0.1rem;
@@ -328,19 +319,16 @@ header {
 }
 
 }
-.button-container {
-    text-align: center; /* Centraliza o conteúdo dentro do contêiner */
-}
+
 
 .header-bottom-side-left .button {
-    display: inline-flex; /* Alinha o botão ao centro */
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
     padding: 1.5rem 1.5rem;
     background-color: #c6008c;
     border-radius: 9999px;
     color: rgb(255, 255, 255);
     text-shadow: 1px 1px 1px #b1a2a2;
-    font-weight: 150%;
-    font-size: 0.8rem;
     text-decoration: none;
     transition: all 0.3s;
     align-items: center;
@@ -413,8 +401,8 @@ h3.section-titles {
 /* Estilos das colunas de produtos */
 .cols-3 {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10rem;
     padding: 2rem;
 }
 
@@ -466,21 +454,7 @@ h3.section-titles {
 }
 
 /* Estilo do botão de compra */
-.buy-button {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #ff00b3;
-    color: white;
-    padding: 0.8rem 2rem;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color;
 
-}
 
 @media (max-width: 800px) {
     .logo {
@@ -678,8 +652,8 @@ header::before {
  /* Grid de Produtos */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 3fr));
+    gap: 8rem;
     padding: 2rem;
     margin: 2rem auto;
     max-width: 1200px;
@@ -690,7 +664,7 @@ header::before {
     .product-grid {
         display: grid; /* Certifique-se de que o display está definido como grid */
         grid-template-columns: 1fr; /* Um único item por linha */
-        gap: 1rem; /* Espaçamento entre os itens */
+        gap: 4rem; /* Espaçamento entre os itens */
         padding: 1rem; /* Espaçamento interno da grid */
     }
 
@@ -970,7 +944,7 @@ font-style: normal;
     
 }
 /* Media Queries */
-@media (max-width: 800px) {
+@media (max-width: 02222px) {
     .search-container {
         display: flex; /* Usar flexbox para melhor alinhamento */
         justify-content: center; /* Centraliza o conteúdo do container */
@@ -1026,6 +1000,29 @@ font-style: normal;
         border-color: #f00; /* Borda vermelha para o botão ativo */
     }
 }
+@media (max-width: 768px) {
+    .header-inner-content-2 h2 {
+        top: 10%;
+        font-size: 3rem; /* ajuste para o tamanho desejado */
+        line-height: 1.2; /* ajuste a altura da linha se necessário */
+    }
+    .header-inner-content-2 p {
+        font-size: 1.5rem; /* ajuste para o tamanho desejado */
+        line-height: 1.2; /* ajuste a altura da linha se necessário */
+    }
+    
+}
+@media (max-width: 768px) {
+    .search-bar { /* Substitua '.barra-de-pesquisa' pelo nome da classe da sua barra de pesquisa */
+        display: none;
+    }
+}
+.estrelas span {
+    font-size: 1.5rem; /* Ajuste o tamanho conforme necessário */
+    color: #f5c518; /* Cor amarela */
+}
+
+
 
 
     

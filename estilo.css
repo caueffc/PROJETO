@@ -346,7 +346,6 @@ header {
 
 .header-bottom-side-left .button:hover {
     transition: all 0.5;
-    transform: translateY(-3px);
     font-weight: bold;
     color: #ffffff;
     transition: all 0.5;

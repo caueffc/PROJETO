@@ -266,7 +266,7 @@ header {
 /* Seção da introdução (à esquerda) */
 .header-bottom-side-left {
     flex-basis: 50%;
-    padding: 2rem;
+    padding: 0.1rem;
     text-align: center;
 }
 
@@ -324,7 +324,7 @@ header {
 .header-bottom-side-left .button {
     font-family: 'Montserrat', sans-serif;
     display: flex;
-    padding: 1.5rem 1.5rem;
+    padding: 1.5rem 0.5rem;
     background-color: #c6008c;
     border-radius: 9999px;
     color: rgb(255, 255, 255);
@@ -333,8 +333,12 @@ header {
     transition: all 0.3s;
     align-items: center;
     justify-content: center;
-    max-width: 250px;
-    margin: 1rem auto; /* Centraliza o botão */
+    max-width: 350px;
+    position: fixed; /* Fixa o botão na tela */
+    bottom: 15px; /* Define a distância da borda inferior */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta o centro do botão */
+    z-index: 1000; /* Garante que fique sobre outros elementos */
 }
 
 
@@ -654,9 +658,9 @@ header::before {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 3fr));
     gap: 8rem;
-    padding: 2rem;
-    margin: 2rem auto;
-    max-width: 1200px;
+    padding: 10rem;
+    margin: 1rem auto;
+    max-width: 1160px;
 }
 
 /* Media Queries */
@@ -1022,8 +1026,42 @@ font-style: normal;
     color: #f5c518; /* Cor amarela */
 }
 
+@media screen and (max-width: 1366px) {
+    .veja-produtos {
+        font-size: 1.8rem; /* Ajusta o tamanho da fonte */
+        margin-top: 20px; /* Adapta o espaçamento */
+        text-align: center; /* Centraliza o texto */
+        color: #333; /* Cor do texto */
+    }
+}
+@media screen and (max-width: 1024px) {
+    .veja-produtos {
+        font-size: 1.6rem; /* Reduz o tamanho da fonte em telas menores */
+        margin-top: 15px; /* Ajusta o espaçamento */
+        padding: 0 10px; /* Adiciona um pequeno espaçamento lateral */
+        color: #444; /* Tonalidade adaptada para telas menores */
+    }
+}
 
+.cols-4 img {
+    width: 100%; /* Garante que as imagens ocupem todo o espaço da célula */
+    height: auto; /* Mantém a proporção das imagens */
+    object-fit: cover; /* Ajusta como a imagem é renderizada */
+    border-radius: 8px; /* Adiciona cantos arredondados para estética */
+}
 
+@media screen and (max-width: 1366px) {
+    .cols-4 {
+        padding: 8px; /* Reduz o padding em telas menores */
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .cols-4 {
+        grid-template-columns: repeat(2, 1fr); /* Exibe duas colunas em dispositivos menores */
+        padding: 8px;
+    }
+}
 
     
   

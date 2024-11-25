@@ -285,6 +285,29 @@
     </footer>
 
 <script>
+       document.addEventListener('DOMContentLoaded', () => {
+            const navItems = document.querySelectorAll('.nav-item');
+
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const content = item.getAttribute('data-content');
+
+                    switch (content) {
+                        case 'produtos':
+                            alert('Você clicou em Produtos. Aqui você encontra todas as nossas opções!');
+                            break;
+                        case 'contato':
+                            alert('Você clicou em Contato. Entre em contato conosco para mais informações.');
+                            break;
+                        case 'sobre':
+                            alert('Você clicou em Sobre. Conheça mais sobre a SheFit!');
+                            break;
+                        default:
+                            alert('Item não reconhecido.');
+                    }
+                });
+            });
+        });
     let cartCount = 0; // Contador de itens no carrinho
 
 document.querySelectorAll('.buy-button').forEach(button => {

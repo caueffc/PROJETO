@@ -60,9 +60,7 @@
     height: auto; /* Mantém a proporção da imagem */
 }
 
-.product-price {
-    font-weight: bold; /* Deixa o preço em negrito */
-}
+
 
 .buy-button {
     background-color: #ff6200ea; /* Cor do botão de comprar */
@@ -141,6 +139,7 @@ nav {
     z-index: 99;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .navbar > div {
@@ -153,7 +152,6 @@ nav {
 .logo img {
     position: absolute;
     top: -80%;
-    
     width: 200px;
     height: 100px;
 
@@ -179,7 +177,6 @@ nav ul {
 }
 
 nav ul li {
-    
     font-size:larger;
     color: white;
     margin-right: 1.5rem;
@@ -189,16 +186,17 @@ nav ul li {
     justify-content: center;
     padding-left: 2rem;
     transition-duration: 1.2s;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+
     
 }
 
 nav ul li:hover {
-    transition: all 0.2s;
-    transform: translateY(-3px);
-    transition: all 0.2s;
-    font-weight: bold;
-    color: #c6008c;
-    box-decoration-break: 0 8px 100px rgba(255, 0, 140, 0.2)
+    transition: all 0.1s;
+    transform: translateY(-2.5px);
 }
 
 .nav-icon-container {
@@ -534,53 +532,77 @@ header::before {
 
 
 /* Estilização do modal */
+/* Estilo do modal */
+/* Estilo geral do modal */
 .modal {
-    display: none; /* O modal está oculto por padrão */
-    position: fixed; 
-    top: 0;
+    display: none; /* Esconde o modal por padrão */
+    position: fixed;
+    z-index: 1;
     left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo transparente escuro */
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-content {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 10px;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo semitransparente */
+    padding-top: 100px; /* Distância do topo */
     text-align: center;
-    max-width: 500px;
+  }
+  
+  /* Estilo do conteúdo do modal */
+  .modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
     width: 80%;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.modal-content h2 {
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
+    max-width: 500px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    border-radius: 10px; /* Bordas arredondadas */
+    text-align: left; /* Alinhamento do texto */
     color: #333;
-}
-
-.modal-content p {
-    font-size: 1rem;
-    color: #555;
-}
-
-/* Botão de fechar o modal */
-.close-button {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  
+  /* Estilo da imagem dentro do modal */
+  .modal-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Bordas arredondadas para a imagem */
+    margin-bottom: 15px; /* Espaço abaixo da imagem */
+  }
+  
+  /* Estilo para o botão de fechar */
+  .close {
+    color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
     position: absolute;
     top: 10px;
     right: 20px;
-    font-size: 1.5rem;
     cursor: pointer;
-    color: #555;
-}
-
-.close-button:hover {
-    color: #ff00b3;
-}
+    transition: color 0.3s ease;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  /* Animação para mostrar o modal */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .modal-content {
+    animation: fadeIn 0.5s ease-in;
+  }
 .filter {
     flex-direction: column;
     align-items: center;
@@ -646,8 +668,8 @@ header::before {
 }
 
 .color-name {
-    font-size: 0.75rem;
-    color: #000000;
+    font-size: 0.66rem;
+    color: #2c2c2c;
     margin-top: 0.5rem;
     text-align: center;
     margin-bottom: rem;
@@ -682,22 +704,13 @@ header::before {
         transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
     }
 }
-.product {
-    background-color: rgb(255, 255, 255);
-    padding: 1.5rem;
-    text-align: center;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-}
 .h2-produtos {
-    font-family: "Arial";
+    font-family: 'Courier New', Courier, monospace;
     font-optical-sizing: auto;
     font-style: normal;
     text-align: center;
     font-weight: bold;
-    color: #000000; /* Cor de destaque */
-    text-shadow: 2px 2px 2px #b1a8a8;
     margin-bottom: 4rem;
     margin-top: 2rem;
 }
@@ -705,7 +718,7 @@ header::before {
     font-family: "Lilita One", sans-serif;
     font-weight: 200;
     font-display: bold;
-    color: #000000;
+    color: #292929;
     text-shadow: 2px 2px 2px #b1a8a8;
     position: absolute;
     top: 109%;
@@ -713,15 +726,7 @@ header::before {
     bottom: 100%;
     transform: translate(-50%, -50%);
 }
-.product img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
-}
-.product:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 2px rgba(235, 232, 232, 0.2);
-}
+
 @media (max-width: 800px) {
     
     
@@ -751,8 +756,7 @@ font-size: 120%;
 }
 .product-name{
 font-size: 150%;
-font-family: "Lilita One", sans-serif;
-font-weight: 400;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 font-style: normal;
 }
 .product {
@@ -784,7 +788,7 @@ font-style: normal;
      footer {
         background-color: rgb(53, 51, 51);
         color: #f1f1f1;
-        padding: 40px 0;
+        padding: 10px 0;
         text-align: center;
     }
     
@@ -814,12 +818,10 @@ font-style: normal;
     
     .footer-section ul {
         list-style: none;
-        padding: 0;
+
     }
     
-    .footer-section ul li {
-        margin-bottom: 10px;
-    }
+   
     
     .footer-section a {
         text-decoration: none;
@@ -833,7 +835,6 @@ font-style: normal;
     
     .footer-bottom {
         border-top: 1px solid rgb(53, 51, 51);
-        padding-top: 15px;
         font-size: 12px;
     }
     
@@ -870,22 +871,26 @@ font-style: normal;
     }
     /* Estilos para a seção de suporte */
 #suporte {
-    padding: 30px;
+    padding: 10px;
     background-color: #f9f9f9;
-    margin: 20px 0;
+    margin: 0px 0;
     border-radius: 8px; /* Bordas arredondadas */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
+    margin-right: 70%;
+
+    
 }
 
 #suporte h2 {
     margin-bottom: 15px;
     font-family: 'Oswald', sans-serif;
-    color: #333;
+    color: #3b3939;
+    padding: -15%;
 }
 
 #suporte p {
     margin-bottom: 20px;
-    color: #555; /* Cor do texto */
+    color: #000000; /* Cor do texto */
 }
 
 #support-form {
@@ -895,8 +900,6 @@ font-style: normal;
 
 #support-form label {
     margin: 5px 0;
-    font-weight: bold; /* Negrito para labels */
-    color: #333; /* Cor do texto */
 }
 
 #support-form input, 
@@ -908,11 +911,7 @@ font-style: normal;
     transition: border-color 0.3s; /* Transição suave na mudança de cor da borda */
 }
 
-#support-form input:focus, 
-#support-form textarea:focus {
-    border-color: #5cb85c; /* Cor da borda ao focar */
-    outline: none; /* Remove o contorno padrão */
-}
+
 
 #support-form button {
     padding: 12px;
@@ -1002,7 +1001,17 @@ font-style: normal;
     .color-button.active {
         border-color: #f00; /* Borda vermelha para o botão ativo */
     }
+
+@media (max-width: 800px) {
+    #suporte{
+        display: fixed;
+    margin-right: 10%;
+    top: 10%;
+        font-size: 1rem; /* ajuste para o tamanho desejado */
+        line-height: 1.2;
+    }
 }
+
 @media (max-width: 768px) {
     .header-inner-content-2 h2 {
         top: 10%;
@@ -1062,8 +1071,8 @@ font-style: normal;
     }
 }
 
-    
-  
 
 
-      
+
+
+

@@ -16,12 +16,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lilita+One&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght=0,900;1,900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght=1,900&family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Big+Shoulders+Inline:opsz,wght@10..72,100..900&family=Emblema+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <body id="top">
     <div class="navbar">
         <div class="header-inner-content">
             <h1 class="logo">
-                <img class="logo2" src="imagens/Design sem nome (3)-Photoroom.png" alt="Logo da Shefit"/>
+                <img class="logo2" src="imagens/Design sem nome (3)-Photoroom.png" alt="Logo da Shefit"/> 
             </h1>
             <nav>
                 <ul>
@@ -29,6 +31,12 @@
                     <li data-content="contato">Contato</li>
                     <li data-content="sobre">Sobre</li>
                 </ul>
+                <div id="modal" class="modal">
+                    <div class="modal-content">
+                      <span id="close" class="close">&times;</span>
+                      <p id="modal-text"></p>
+                    </div>
+                  </div>
                 <form action="#" class="search-bar">
                     <input type="text" id="search-input" placeholder="Buscar produtos...">
                     <button type="button" id="search-button">🔍</button>
@@ -38,11 +46,19 @@
             <div class="nav-icon-container">
                 <a href="carrinho.html">
                     <img src="imagens/cart.png" alt="">
-                </a>
-                <a href="login.html" class="login-button">Login</a> <!-- Botão de login próximo ao carrinho -->
+<!-- Botão de Login -->
+<a href="login.html" class="login-button" id="login-button">Login</a>
+<a href="#" id="logout-button" style="display: none;">Logout</a>
+
+<!-- Novo botão de "Minha Conta" que será exibido após o login -->
+<a href="minha-conta.html" id="account-button" style="display: none;">Minha Conta</a>
+
+<!-- Mensagem de boas-vindas -->
+<p id="logged-in-message" style="display: none;">Bem-vindo de volta!</p>
+ 
+
                 
-                    
-                </div>
+            </div>
             </div>
         </div>
     </div>
@@ -52,11 +68,9 @@
             <div class="header-bottom-side-left scroll-animation">
                 <h2>Transforme Seu Estilo <span class="Fitzin">fitness</span> <br>com a SheFit</h2>
                 <div class="button-container"></div>
-                <a href="#produtos" class="button">VEJA NOSSOS PRODUTOS</a>
             </div>
             </div>
-            <div class="header-bottom-side-center">
-                <!-- Imagem central pode ser adicionada aqui -->
+            <div class="header-bottom-side-center">]
             </div>
     </header>
     <section id="produtos">
@@ -89,10 +103,9 @@
                 <h1 class="color-name">Vermelho</h1>
             </div>
         </div>
-
         <div class="product-grid">
-            <div class="product" data-color="azul">
-                <img src="maio/azul.png" alt="Combo Fitness 1"/>
+            <div class="product" data-id="1" data-color="azul">
+                <img src="Design sem nome (34).png" alt="Combo Fitness 1"/>
                 <p class="product-name">Combo Fitness 1</p>
                 <p class="product-price">69.90 R$</p>
                 <p class="tamanho-rp">Disponivel tamanho P M G</p>
@@ -103,9 +116,11 @@
                     <span>★</span>
                     <span>★</span>
                 </div>
-                <button class="buy-button">Comprar</button>
+                <a href="produto.html">
+                    <button class="buy-button" data-product-id="1">Comprar</button>
+                  </a>
             </div>
-            <div class="product" data-color="marrom">
+            <div class="product" data-id="2" data-color="marrom">
                 <img src="maio/Design sem nome (13).png" alt="Combo Fitness 2"/>
                 <p class="product-name">Combo Fitness 2</p>
                 <p class="product-price">47.89 R$</p>
@@ -117,9 +132,9 @@
                     <span>★</span>
                     <span>★</span>
                 </div>
-                <button class="buy-button">Comprar</button>
+                <button class="buy-button" data-product-id="1">Comprar</button>
             </div>
-            <div class="product" data-color="rosa">
+            <div class="product" data-product-id="1" data-color="rosa">
                 <img src="maio/rosa3.png" alt="Combo Fitness 3"/>
                 <p class="product-name">Combo Fitness 3</p>
                 <p class="product-price">89,90 R$</p>
@@ -131,9 +146,9 @@
                     <span>★</span>
                     <span>★</span>
                 </div>
-                <button class="buy-button">Comprar</button>
+                <button class="buy-button" data-product-id="1">Comprar</button>
             </div>
-            <div class="product" data-color="verde">
+            <div class="product" data-product-id="1" data-color="verde">
                 <img src="maio/verde.png" alt="Combo Fitness 4"/>
                 <p class="product-name">Combo Fitness 4</p>
                 <p class="product-price">54,90 R$</p>
@@ -145,9 +160,9 @@
                     <span>★</span>
                     <span>★</span>
                 </div>
-                <button class="buy-button">Comprar</button>
+                <button class="buy-button" data-product-id="1">Comprar</button>
             </div>
-            <div class="product" data-color="vermelho">
+            <div class="product" data-product-id="1" data-color="vermelho">
                 <img src="maio/vermelho.png" alt="Combo Fitness 5"/>
                 <p class="product-name">Combo Fitness 5</p>
                 <p class="product-price">69.98 R$</p>
@@ -159,9 +174,9 @@
                     <span>★</span>
                     <span>★</span>
                 </div>
-                <button class="buy-button">Comprar</button>
+                <button class="buy-button" data-product-id="1">Comprar</button>
             </div>
-            <div class="product" data-color="verde">
+            <div class="product" data-product-id="1" data-color="verde">
                 <img src="maio/verde2.png" alt="Combo Fitness 6"/>
                 <p class="product-name">Combo Fitness 6</p>
                 <p class="product-price">62.80 R$</p>
@@ -174,9 +189,9 @@
                     <span>★</span>
                 </div>
                 
-                <button class="buy-button">Comprar</button>
+                <button class="buy-button" data-product-id="1">Comprar</button>
             </div>
-            <div class="product" data-color="rosa">
+            <div class="product" data-product-id="1" data-color="rosa">
                 <img src="maio/rosa e branco.png" alt="Combo Fitness 7"/>
                 <p class="product-name">Combo Fitness 7</p>
                 <p class="product-price">73,90 R$</p>
@@ -188,9 +203,9 @@
                     <span>★</span>
                     <span>★</span>
                 </div>
-                <button class="buy-button">Comprar</button>
+                <button class="buy-button" data-product-id="1">Comprar</button>
             </div>
-            <div class="product" data-color="rosa">
+            <div class="product" data-product-id="1" data-color="rosa">
                 <img src="maio/rosa e branco2.png" alt="Combo Fitness 8"/>
                 <p class="product-name">Combo Fitness 8</p>
                 <p class="product-price">55,90 R$</p>
@@ -202,9 +217,9 @@
                     <span>★</span>
                     <span>★</span>
                 </div>
-                <button class="buy-button">Comprar</button>
+                <button class="buy-button" data-product-id="1">Comprar</button>
             </div>
-            <div class="product" data-color="azul">
+            <div class="product" data-product-id="1" data-color="azul">
                 <img src="maio/Design sem nome (8).png" alt="Combo Fitness 9"/>
                 <p class="product-name">Combo Fitness 9</p>
                 <p class="product-price">63,90 R$</p>
@@ -216,7 +231,7 @@
                     <span>★</span>
                     <span>★</span>
                 </div>
-                <button class="buy-button">Comprar</button>
+                <button class="buy-button" data-product-id="1" data-product-id="1">Comprar</button>
             </div>
             <div class="product" data-color="marrom">
                 <img src="roupas/Design_sem_nome_10.png" alt="Combo Fitness 10"/>
@@ -230,7 +245,7 @@
                     <span>★</span>
                     <span>★</span>
                 </div>
-                <button class="buy-button">Comprar</button>
+                <button class="buy-button" data-product-id="1" data-product-id="1">Comprar</button>
             </div>
         </div>
     </section>
@@ -266,7 +281,6 @@
                     <li><a href="index.html#top">Voltar ao topo</a></li>
                 </ul>
             </div>
-            
             <div class="footer-section contato">
                 <h2>Contato</h2>
                 <p><strong>Email:</strong> contato@shefit.com</p>
@@ -285,161 +299,222 @@
     </footer>
 
 <script>
-       document.addEventListener('DOMContentLoaded', () => {
-            const navItems = document.querySelectorAll('.nav-item');
+   // Selecionando todos os itens da lista
+const items = document.querySelectorAll('nav ul li');
 
-            navItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    const content = item.getAttribute('data-content');
+// Selecionando o modal e o texto que vai ser alterado
+const modal = document.getElementById("modal");
+const modalText = document.getElementById("modal-text");
+const close = document.getElementById("close");
 
-                    switch (content) {
-                        case 'produtos':
-                            alert('Você clicou em Produtos. Aqui você encontra todas as nossas opções!');
-                            break;
-                        case 'contato':
-                            alert('Você clicou em Contato. Entre em contato conosco para mais informações.');
-                            break;
-                        case 'sobre':
-                            alert('Você clicou em Sobre. Conheça mais sobre a SheFit!');
-                            break;
-                        default:
-                            alert('Item não reconhecido.');
-                    }
-                });
-            });
-        });
-    let cartCount = 0; // Contador de itens no carrinho
+// Exibindo o modal com base no clique
+items.forEach(item => {
+  item.addEventListener('click', function() {
+    const content = item.getAttribute('data-content');
+    
+    // Definindo o texto do modal de acordo com o item clicado
+    switch(content) {
+      case 'produtos':
+        modalText.textContent = 'Na SheFit, cada peça é pensada para oferecer conforto, estilo e desempenho para mulheres que amam se movimentar. Nossa coleção conta com leggings de alta compressão, tops anatômicos, shorts flexíveis e muito mais, tudo com tecidos respiráveis e modelagens que valorizam o corpo.!';
+        break;
+      case 'contato':
+        modalText.innerHTML = 'Aqui você pode entrar em contato conosco!<br> @use.shefit <br> (24)99999-9999';
+        break;
+      case 'sobre':
+        modalText.textContent = 'A SheFit é uma marca apaixonada por transformar a experiência de mulheres no universo fitness. Nascemos com a missão de oferecer roupas de alta qualidade, conforto e estilo para mulheres que buscam desempenho, confiança e liberdade durante seus treinos. Cada peça é pensada para se adaptar ao corpo feminino, garantindo o máximo de mobilidade e segurançaNossa visão é ser referência no mercado de moda fitness, promovendo não apenas qualidade, mas também inclusão e autoestima para todas as mulheres!'
+      default:
+    }
+    
+    // Exibindo o modal
+    modal.style.display = "block";
+  });
+});
 
-document.querySelectorAll('.buy-button').forEach(button => {
-    button.addEventListener('click', () => {
-        cartCount++; // Aumenta o contador ao clicar no botão de comprar
-        document.getElementById('cart-count').textContent = cartCount; // Atualiza o contador na navbar
+// Fechando o modal quando o usuário clicar no "x"
+close.addEventListener('click', function() {
+  modal.style.display = "none";
+});
+
+// Fechando o modal se o usuário clicar fora dele
+window.addEventListener('click', function(event) {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+const filterButtons = document.querySelectorAll('.filter-button');
+const products = document.querySelectorAll('.product');
+const cartCount = document.getElementById('cart-count');
+
+
+filterButtons.forEach(button => {
+button.addEventListener('click', () => {
+    const color = button.getAttribute('data-color');
+    
+    products.forEach(product => {
+        if (color === 'todos' || product.getAttribute('data-color') === color) {
+            product.style.display = 'block';
+        } else {
+            product.style.display = 'none';
+        }
     });
 });
-document.addEventListener('DOMContentLoaded', () => {
-    const filterButtons = document.querySelectorAll('.filter-button');
-    const products = document.querySelectorAll('.product');
-    const cartCount = document.getElementById('cart-count');
-    let count = 0; // Contador para o carrinho
+});
 
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const color = button.getAttribute('data-color');
-            
-            products.forEach(product => {
-                if (color === 'todos' || product.getAttribute('data-color') === color) {
-                    product.style.display = 'block';
-                } else {
-                    product.style.display = 'none';
-                }
-            });
-        });
+// Configuração para rolar suavemente para a seção de produtos
+document.querySelector('.button').addEventListener('click', function(e) {
+e.preventDefault();
+document.querySelector('#produtos').scrollIntoView({
+    behavior: 'smooth'
+});
+});
+
+// Smooth scroll para todos os links com hash #
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
     });
+});
+});
 
-    // Configuração para rolar suavemente para a seção de produtos
-    document.querySelector('.button').addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector('#produtos').scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
+const menuButton = document.querySelector(".menu-button");
+const nav = document.querySelector("nav");
 
-    // Smooth scroll para todos os links com hash #
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
+// Alterna a classe para mostrar ou esconder o menu
+menuButton.addEventListener('click', () => {
+nav.classList.toggle("show-menu");
+});
 
-    const menuButton = document.querySelector(".menu-button");
-    const nav = document.querySelector("nav");
+const backToTopButton = document.getElementById('back-to-top');
 
-    // Alterna a classe para mostrar ou esconder o menu
-    menuButton.addEventListener('click', () => {
-        nav.classList.toggle("show-menu");
-    });
+window.addEventListener('scroll', () => {
+if (window.scrollY > 300) {
+    backToTopButton.style.display = 'block';
+} else {
+    backToTopButton.style.display = 'none';
+}
+});
 
-    const backToTopButton = document.getElementById('back-to-top');
+const animatedElements = document.querySelectorAll('.scroll-animation');
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+    if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+    }
+});
+});
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTopButton.style.display = 'block';
-        } else {
-            backToTopButton.style.display = 'none';
-        }
-    });
+animatedElements.forEach(element => {
+observer.observe(element);
+});
 
-    const animatedElements = document.querySelectorAll('.scroll-animation');
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    });
+// Seleciona o modal e o botão de fechar
+const modal = document.getElementById("site-info-modal");
+const closeButton = document.querySelector(".close-button");
 
-    animatedElements.forEach(element => {
-        observer.observe(element);
-    });
+// Adiciona um evento de clique ao item do menu
+document.querySelectorAll('nav ul li').forEach(item => {
+item.addEventListener('click', () => {
+    modal.style.display = "flex"; // Mostra o modal
+});
+});
 
-    // Seleciona o modal e o botão de fechar
-    const modal = document.getElementById("site-info-modal");
-    const closeButton = document.querySelector(".close-button");
+// Fecha o modal ao clicar no botão de fechar
+closeButton.addEventListener('click', () => {
+modal.style.display = "none";
+});
 
-    // Adiciona um evento de clique ao item do menu
-    document.querySelectorAll('nav ul li').forEach(item => {
-        item.addEventListener('click', () => {
-            modal.style.display = "flex"; // Mostra o modal
-        });
-    });
+// Fecha o modal se o usuário clicar fora da área de conteúdo do modal
+window.addEventListener('click', (event) => {
+if (event.target === modal) {
+    modal.style.display = "none";
+}
+});
 
-    // Fecha o modal ao clicar no botão de fechar
-    closeButton.addEventListener('click', () => {
-        modal.style.display = "none";
-    });
-
-    // Fecha o modal se o usuário clicar fora da área de conteúdo do modal
-    window.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    });
-
-    // Aumenta o contador do carrinho ao clicar no botão "Comprar"
-    document.querySelectorAll('.buy-button').forEach(button => {
-        button.addEventListener('click', () => {
-            count++; // Incrementa o contador
-            cartCount.textContent = count; // Atualiza o contador no carrinho
-            
-        });
-    });
+// Aumenta o contador do carrinho ao clicar no botão "Comprar"
+document.querySelectorAll('.buy-button').forEach(button => {
+button.addEventListener('click', () => {
+    count++; // Incrementa o contador
+    cartCount.textContent = count; // Atualiza o contador no carrinho
+    
+});
+});
 });
 document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.getElementById('search-input');
-    const products = document.querySelectorAll('.product');
+const searchInput = document.getElementById('search-input');
+const products = document.querySelectorAll('.product');
 
-    searchInput.addEventListener('input', function() {
-        const searchTerm = searchInput.value.toLowerCase();
+searchInput.addEventListener('input', function() {
+const searchTerm = searchInput.value.toLowerCase();
 
-        products.forEach(product => {
-            const productName = product.querySelector('.product-name').textContent.toLowerCase();
-            if (productName.includes(searchTerm)) {
-                product.style.display = 'block';
-            } else {
-                product.style.display = 'none';
-            }
-        });
-    });
+products.forEach(product => {
+    const productName = product.querySelector('.product-name').textContent.toLowerCase();
+    if (productName.includes(searchTerm)) {
+        product.style.display = 'block';
+    } else {
+        product.style.display = 'none';
+    }
 });
-function searchFunction() {
-    const query = document.querySelector('.search-input').value;
-    // Adicione a lógica de pesquisa aqui
-    console.log("Buscando por:", query);
-}
+});
+});
+// Script para interação com a barra de pesquisa
+const searchInput = document.getElementById('search-input');
 
+searchButton.addEventListener('click', () => {
+const searchTerm = searchInput.value.toLowerCase();
+const products = document.querySelectorAll('.product');
+
+products.forEach(product => {
+const productName = product.querySelector('.product-name').textContent.toLowerCase();
+if (productName.includes(searchTerm)) {
+    product.style.display = 'block';
+} else {
+    product.style.display = 'none';
+}
+});
+});
+
+// Script para interação com a barra de pesquisa
+const searchButton = document.getElementById('search-button');
+
+searchButton.addEventListener('click', () => {
+const searchTerm = searchInput.value.toLowerCase();
+const products = document.querySelectorAll('.product');
+
+products.forEach(product => {
+const productName = product.querySelector('.product-name').textContent.toLowerCase();
+if (productName.includes(searchTerm)) {
+    product.style.display = 'block';
+} else {
+    product.style.display = 'none';
+}
+});
+});
+
+// Script para filtro de cores de produtos
+const filterButtons = document.querySelectorAll('.filter-button');
+
+filterButtons.forEach(button => {
+button.addEventListener('click', () => {
+const color = button.getAttribute('data-color');
+const products = document.querySelectorAll('.product');
+
+products.forEach(product => {
+    if (color === 'todos' || product.getAttribute('data-color') === color) {
+        product.style.display = 'block';
+    } else {
+        product.style.display = 'none';
+    }
+});
+});
+});
+
+</script>
+      
 
 </script>
 </body>

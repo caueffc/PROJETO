@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combo Fitness 1 - SheFit</title>
+    <link rel="stylesheet" href="produto1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Lilita+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lilita+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght=0,900;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Big+Shoulders+Inline:opsz,wght@10..72,100..900&family=Emblema+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght=1,900&family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="header-inner-content">
+            <h1 class="logo">
+                <img class="logo2" src="imagens/Design sem nome (3)-Photoroom.png" alt="Logo da SheFit"/> 
+            </h1>
+            <nav>
+                <ul>
+                    <li>Produtos</li>
+                    <li data-content="contato">Contato</li>
+                    <li data-content="sobre">Sobre</li>
+                </ul>
+                <div id="modal" class="modal">
+                    <div class="modal-content">
+                      <span id="close" class="close">&times;</span>
+                      <p id="modal-text"></p>
+                    </div>
+                  </div>
+                </ul>
+            </nav>
+            <div class="nav-icon-container">
+                <a href="carrinho.html">
+                    <img src="imagens/cart.png" alt="Carrinho">
+                </a>
+            </div>
+        </div>
+    </header>
+
+        <div class="produto-imagem">
+            <button class="botao-navegacao" onclick="trocarImagem()">➡</button>
+            <img id="imagemProduto" src="laurinha.png" alt="Imagem Do Produto">
+            
+        <div class="produto-detalhes">
+            <h2>Combo Fitness 1</h2>
+            <p class="produto-descricao">
+                Conjunto fitness confortável e estiloso para seu treino. Com tecido de alta qualidade e modelagem ajustável, garantindo máximo desempenho.
+            </p>
+            <p><strong>Material:</strong> Poliéster e Elastano</p>
+            <p><strong>Tamanhos disponíveis:</strong> P, M, G</p>
+            <p><strong>Cor:</strong> Azul</p>
+            <p class="produto-preco">R$ 69,90</p>
+
+            <div class="botoes-container">
+                <button class="buy-button" onclick="adicionarAoCarrinho(1)">Comprar</button>
+                <button class="cart-button">
+                    <img src="imagens/cart.png" alt="Carrinho">
+                </button>
+                <div class="controle-quantidade">
+                    <button class="btn-menor">-</button>
+                    <span class="quantidade">1</span>
+                    <button class="btn-maior">+</button>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>Sobre a SheFit</h2>
+                <p>Na SheFit, oferecemos roupas fitness de alta qualidade para que você se sinta confortável e confiante durante seus treinos.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Links Rápidos</h2>
+                <ul>
+                    <li><a href="index.html#produtos">Produtos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contato">
+                <h2>Contato</h2>
+                <p><strong>Email:</strong> contato@shefit.com</p>
+                <p><strong>Telefone:</strong> +55 11 99999-9999</p>
+                <a href="https://wa.me/5511999999999" target="_blank">
+                    <img src="imagens/10000484_processed.jpg" alt="WhatsApp da SheFit" style="width: 40px; height: auto;">
+                </a>
+                <a href="https://instagram.com/use.shefit/" target="_blank">
+                    <img src="imagens/logotipo-da-aplicacao-instagram-em-fundo-branco_1301901-2125_processed.png" alt="WhatsApp da SheFit" style="width: 40px; height: auto;">
+                </a>                
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SheFit. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script>
+        function adicionarAoCarrinho(produtoId) {
+            alert("Produto adicionado ao carrinho!");
+            // Aqui pode ser adicionado código para salvar no localStorage ou API
+        }
+        let imagens = ["laurinha.png", "laura5.png", "laura3.png"];
+let index = 0;
+
+function trocarImagem() {
+    index = (index + 1) % imagens.length; // Alterna entre as imagens
+    document.getElementById("imagemProduto").src = imagens[index];
+}
+ // Selecionando todos os itens da lista
+ const items = document.querySelectorAll('nav ul li');
+
+// Selecionando o modal e o texto que vai ser alterado
+const modal = document.getElementById("modal");
+const modalText = document.getElementById("modal-text");
+const close = document.getElementById("close");
+
+// Exibindo o modal com base no clique
+items.forEach(item => {
+  item.addEventListener('click', function() {
+    const content = item.getAttribute('data-content');
+    
+    // Definindo o texto do modal de acordo com o item clicado
+    switch(content) {
+      case 'contato':
+        modalText.innerHTML = 'Aqui você pode entrar em contato conosco!<br> @use.shefit <br> (24)99999-9999';
+        break;
+      case 'sobre':
+        modalText.textContent = 'A SheFit é uma marca apaixonada por transformar a experiência de mulheres no universo fitness. Nascemos com a missão de oferecer roupas de alta qualidade, conforto e estilo para mulheres que buscam desempenho, confiança e liberdade durante seus treinos. Cada peça é pensada para se adaptar ao corpo feminino, garantindo o máximo de mobilidade e segurançaNossa visão é ser referência no mercado de moda fitness, promovendo não apenas qualidade, mas também inclusão e autoestima para todas as mulheres!'
+      default:
+    }
+    
+    // Exibindo o modal
+    modal.style.display = "block";
+  });
+});
+
+// Fechando o modal quando o usuário clicar no "x"
+close.addEventListener('click', function() {
+  modal.style.display = "none";
+});
+
+// Fechando o modal se o usuário clicar fora dele
+window.addEventListener('click', function(event) {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+});
+document.querySelector('.btn-maior').addEventListener('click', function() {
+  let quantidade = document.querySelector('.quantidade');
+  quantidade.textContent = parseInt(quantidade.textContent) + 1;
+});
+
+document.querySelector('.btn-menor').addEventListener('click', function() {
+  let quantidade = document.querySelector('.quantidade');
+  if (parseInt(quantidade.textContent) > 1) {
+    quantidade.textContent = parseInt(quantidade.textContent) - 1;
+  }
+});
+    </script>
+</body>
+</html>

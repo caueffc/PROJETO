@@ -5,22 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilologin.css">
     <title>Login - SheFit</title>
+    <style>
+        .success-message {
+            display: none;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            font-size: 1.2em;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+    <a href="index.html" class="btn-voltar">Voltar para o Início</a>
     <div class="login-container">
+        
         <h1>Bem-vindo à SheFit</h1>
         <p>Faça login para acessar sua conta</p>
-        <form class="login-form">
+        <form class="login-form" onsubmit="return login()">
             <label for="username">Usuário</label>
             <input type="text" id="username" name="username" required>
 
             <label for="password">Senha</label>
             <input type="password" id="password" name="password" required>
 
-            <!-- Link que redireciona para a página principal -->
-            <a href="index.html" class="login-button">Entrar</a>
+            <button type="submit" class="login-button">Entrar</button>
             <p class="register-link">Ainda não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
         </form>
+
+        <!-- Mensagem de sucesso -->
+        <div id="successMessage" class="success-message">Login bem-sucedido! Redirecionando...</div>
     </div>
+
+    <script>
+    const usuarios = {
+    "user1": "senha123",
+    "user2": "senha456",
+    "user3": "senha789",
+    "user4": "senha101",
+    "user5": "senha102"
+};
+
+
+function fazerLogin() {
+    const usuario = document.getElementById("username").value;
+    const senha = document.getElementById("password").value;
+
+    if (usuarios[usuario] && usuarios[usuario] === senha) {
+        localStorage.setItem("usuarioLogado", usuario); // Salva o login
+        console.log("Usuário logado com sucesso:", usuario); // Teste
+        window.location.href = "index.html"; // Redirecionar
+    } else {
+        alert("Usuário ou senha incorretos!");
+    }
+}
+        
+
+
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const successMessage = document.getElementById("successMessage");
+
+            // Verifica se o usuário e a senha são válidos
+            if (usuarios[username] && usuarios[username] === password) {
+                // Exibe a mensagem de sucesso
+                successMessage.style.display = "block";
+
+                // Redireciona para a página principal após 3 segundos
+                setTimeout(function() {
+                    window.location.href = "index.html";
+                }, 3000);
+
+                return false; // Impede o envio do formulário para evitar recarregar a página
+            } else {
+                alert("Usuário ou senha incorretos!");
+                return false; // Impede o envio do formulário em caso de erro
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            const loginButton = document.getElementById('login-link');
+            const logoutButton = document.getElementById('logout-link');
+
+            if (isLoggedIn) {
+                loginButton.style.display = 'none';
+                logoutButton.style.display = 'inline-block';
+            } else {
+                loginButton.style.display = 'inline-block';
+                logoutButton.style.display = 'none';
+            }
+
+            loginButton.addEventListener('click', () => {
+                localStorage.setItem('isLoggedIn', 'true');
+                loginButton.style.display = 'none';
+                logoutButton.style.display = 'inline-block';
+            });
+
+            logoutButton.addEventListener('click', () => {
+                localStorage.setItem('isLoggedIn', 'false');
+                loginButton.style.display = 'inline-block';
+                logoutButton.style.display = 'none';
+            });
+        });
+    </script>
 </body>
 </html>

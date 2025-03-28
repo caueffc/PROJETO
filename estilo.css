@@ -227,6 +227,67 @@ nav ul li:hover {
     margin-left: 2rem;
 
 }
+@media (max-width: 768px) {
+    .navbar {
+        position: fixed; /* Mantém fixa */
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+}
+@media (max-width: 1168px) {
+    .navbar ul {
+        font-size: 3rem;
+        display: none; /* Esconde os itens do menu */
+    }
+    .navbar ul li { 
+        display: none;
+
+    }
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+    }
+}
+
+/* Estilo do botão de menu (hambúrguer) */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    background: none;
+    border: none;
+}
+
+/* Quando o menu for aberto, os itens aparecerão */
+.navbar.active ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: #211e19;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.navbar.active ul li {
+    margin: 10px 0;
+}
+
+    
+@media (max-width: 768px) {
+    .search-bar, .search-button {
+        display: none ; /* Esconde a barra e o botão de pesquisa */
+    }
+}
 
 /* Estilo do header com imagem de fundo */
 header {
@@ -316,6 +377,28 @@ header {
     transform: translateY(0);
 }
 
+}
+@media (max-width: 768px) {
+    .header-inner-content-2 {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-bottom-side-left {
+        padding: 20px;
+    }
+
+    .header-bottom-side-left h2 {
+        font-size: 3rem; /* Reduz o tamanho do título */
+    }
+
+    .button-container {
+        margin-top: 10px;
+    }
+
+    .header-bottom-side-center {
+        display: none; /* Esconde esse elemento em telas menores */
+    }
 }
 
 
@@ -456,55 +539,6 @@ h3.section-titles {
 
 /* Estilo do botão de compra */
 
-
-@media (max-width: 800px) {
-    .logo {
-        font-size: 1.5rem;
-        text-align: center;
-        padding-bottom: 1rem;
-    }
-
-    .menu-button {
-        display: block;
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-    }
-
-    .header-bottom-side {
-        flex-direction: column;
-        align-items: center;
-        padding-top: 1.5rem;
-    }
-
-    nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: #211e19;
-        width: 60%;
-        height: 100%;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        z-index: 100;
-    }
-
-    nav ul {
-        flex-direction: column;
-        padding: 2rem 0;
-    }
-
-    nav ul li {
-        text-align: center;
-        padding: 1rem 0;
-        font-size: 1.2rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    /* Active state for menu when it is open */
-    nav.active {
-        transform: translateX(0);
-    }
-}
 
 
 .header::after {
@@ -927,6 +961,38 @@ font-style: normal;
 #support-form button:hover {
     background-color: #4cae4c; /* Cor de fundo ao passar o mouse */
 }
+@media (max-width: 768px) {
+    #suporte h2 {
+        width: 100%; /* Aumenta a largura do título */
+        text-align: center;
+        margin-bottom: 10px;
+        padding: 0;
+    }
+
+    #suporte p {
+        width: 180%; /* Aumenta a largura do parágrafo */
+        font-size: 14px;
+        margin-bottom: 15px;
+        text-align: justify; /* Justifica o texto para distribuir melhor as palavras */
+    }
+}
+
+
+    #support-form {
+        padding: 10px; /* Adiciona um pouco de padding para espaçamento */
+    }
+
+    #support-form input,
+    #support-form textarea {
+        padding-right: 50px; /* Diminui o padding para economizar espaço */
+        font-size: 14px; /* Ajusta o tamanho da fonte para dispositivos móveis */
+    }
+
+    #support-form button {
+        font-size: 14px; /* Ajusta o tamanho da fonte do botão */
+        padding: 10px; /* Diminui o padding para dispositivos menores */
+    }
+
 .login-button {
     color: white;
     padding: 0.5rem 1rem; /* Ajuste o padding conforme necessário */
@@ -976,103 +1042,3 @@ font-style: normal;
         background-color: #f00; /* Cor de fundo ao passar o mouse */
     }
 }
-@media (max-width: 800px) {
-    .color-button-container {
-        display: flex; /* Usar flexbox para melhor alinhamento */
-        flex-wrap: wrap; /* Permitir que os botões se movam para a próxima linha */
-        justify-content: center; /* Centraliza os botões horizontalmente */
-        margin: 1rem 0; /* Espaço acima e abaixo do container */
-    }
-
-    .color-button {
-        width: 40px; /* Largura fixa para os botões de cor */
-        height: 40px; /* Altura fixa para os botões de cor */
-        border-radius: 50%; /* Formato circular */
-        margin: 0.5rem; /* Espaço entre os botões */
-        border: 2px solid transparent; /* Borda padrão */
-        cursor: pointer; /* Muda o cursor ao passar o mouse */
-        transition: border-color 0.2s; /* Efeito de transição para a borda */
-    }
-
-    .color-button:hover {
-        border-color: #000; /* Borda escura ao passar o mouse */
-    }
-
-    .color-button.active {
-        border-color: #f00; /* Borda vermelha para o botão ativo */
-    }
-
-@media (max-width: 800px) {
-    #suporte{
-        display: fixed;
-    margin-right: 10%;
-    top: 10%;
-        font-size: 1rem; /* ajuste para o tamanho desejado */
-        line-height: 1.2;
-    }
-}
-
-@media (max-width: 768px) {
-    .header-inner-content-2 h2 {
-        top: 10%;
-        font-size: 3rem; /* ajuste para o tamanho desejado */
-        line-height: 1.2; /* ajuste a altura da linha se necessário */
-    }
-    .header-inner-content-2 p {
-        font-size: 1.5rem; /* ajuste para o tamanho desejado */
-        line-height: 1.2; /* ajuste a altura da linha se necessário */
-    }
-    
-}
-@media (max-width: 768px) {
-    .search-bar { /* Substitua '.barra-de-pesquisa' pelo nome da classe da sua barra de pesquisa */
-        display: none;
-    }
-}
-.estrelas span {
-    font-size: 1.5rem; /* Ajuste o tamanho conforme necessário */
-    color: #f5c518; /* Cor amarela */
-}
-
-@media screen and (max-width: 1366px) {
-    .veja-produtos {
-        font-size: 1.8rem; /* Ajusta o tamanho da fonte */
-        margin-top: 20px; /* Adapta o espaçamento */
-        text-align: center; /* Centraliza o texto */
-        color: #333; /* Cor do texto */
-    }
-}
-@media screen and (max-width: 1024px) {
-    .veja-produtos {
-        font-size: 1.6rem; /* Reduz o tamanho da fonte em telas menores */
-        margin-top: 15px; /* Ajusta o espaçamento */
-        padding: 0 10px; /* Adiciona um pequeno espaçamento lateral */
-        color: #444; /* Tonalidade adaptada para telas menores */
-    }
-}
-
-.cols-4 img {
-    width: 100%; /* Garante que as imagens ocupem todo o espaço da célula */
-    height: auto; /* Mantém a proporção das imagens */
-    object-fit: cover; /* Ajusta como a imagem é renderizada */
-    border-radius: 8px; /* Adiciona cantos arredondados para estética */
-}
-
-@media screen and (max-width: 1366px) {
-    .cols-4 {
-        padding: 8px; /* Reduz o padding em telas menores */
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .cols-4 {
-        grid-template-columns: repeat(2, 1fr); /* Exibe duas colunas em dispositivos menores */
-        padding: 8px;
-    }
-}
-
-
-
-
-
-

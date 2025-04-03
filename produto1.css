@@ -1,110 +1,57 @@
- /* Reset de estilos */
- * {
+/* Reset básico */
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100px;
-}
-nav {
+    font-family: 'Arial', sans-serif; /* Fonte padrão */
+    line-height: 1.6; /* Altura da linha */
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o corpo ocupe toda a altura */
+    background-color: #ffffff; /* Cor de fundo */
 }
 
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center; /* Centraliza os itens na horizontal */
+    align-items: center; /* Centraliza os itens na vertical */
+}
 
 .navbar {
-    background-color: #211e19;
-    padding: 1rem;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    box-shadow: 0px 10px 5px #211e19;
-    z-index: 99;
-    flex-direction: column;
-    align-items: center;
-}
-
-.navbar > div {
+    background-color: #211e19; /* Cor da barra de navegação */
+    color: white; /* Cor do texto */
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
+    justify-content: center; /* Distribui espaço entre os itens */
+    align-items: center; /* Centraliza os itens verticalmente */
 }
 
-.logo img {
-    position: absolute;
-    top: -87%;
-    width: 200px;
-    height: 100px;
-
-    
-
-
-}
-
-.cart-button{
-    display: flex;
-    list-style: none;
-    margin: 0 30px;
+.navbar a {
+    font-size:larger;
+    color: white;
+    margin-right: 1.5rem;
+    cursor: pointer;
+    margin: 0 50px;
     align-items: center;
     justify-content: center;
-    margin-left: 2rem;
-
+    padding-left: 2rem;
+    transition-duration: 1.2s;
+    text-decoration: none; /* Sublinhado ao passar o mouse */
 }
-
-/* Estilos básicos para manter a identidade visual */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100px;
+nav ul li:hover{
+    transition: all 0.3s;
+    transform: translateY(-2.5px);
 }
-
-.navbar ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 50px; /* Aumenta o espaço entre os itens */
-    
+.navbar a:hover {
+    transition: all 0.1s;
+    transform: translateY(-2.5px);
+    text-decoration: none; /* Sublinhado ao passar o mouse */
 }
-
-.navbar ul li {
-    color: white;
-    display: inline;
-    margin: 0 20px; /* Espaçamento horizontal */
-    font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-
-}
-
-.navbar ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 16px;
-}
-
-.nav-icon-container img {
-    width: 30px;
-}
-
-/* Estilização do Produto */
-
 
 /* Ajusta a imagem do produto */
 .produto-imagem {

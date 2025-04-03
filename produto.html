@@ -16,32 +16,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght=1,900&family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="navbar">
-        <div class="header-inner-content">
-            <h1 class="logo">
-                <img class="logo2" src="imagens/Design sem nome (3)-Photoroom.png" alt="Logo da SheFit"/> 
-            </h1>
-            <nav>
-                <ul>
-                    <li>Produtos</li>
-                    <li data-content="contato">Contato</li>
-                    <li data-content="sobre">Sobre</li>
-                </ul>
-                <div id="modal" class="modal">
-                    <div class="modal-content">
-                      <span id="close" class="close">&times;</span>
-                      <p id="modal-text"></p>
-                    </div>
-                  </div>
-                </ul>
-            </nav>
-            <div class="nav-icon-container">
-                <a href="carrinho.html">
-                    <img src="imagens/cart.png" alt="Carrinho">
-                </a>
-            </div>
-        </div>
-    </header>
+    <div class="navbar">
+        <h1 class="logo">
+            <img class="logo2" src="imagens/Design sem nome (3)-Photoroom.png" alt="Logo da Shefit" style="height: 75px;"/>
+        </h1>
+        <nav>
+            <ul>
+                <li data-content="produtos"><a href="index.html">Produtos</a></li>
+                <li data-content="contato"><a href="#contato">Contato</a></li>
+                <li data-content="sobre"><a href="#sobre">Sobre</a></li>
+            </ul>
+        </nav>
+        
+    </div>
+    
 
         <div class="produto-imagem">
             <button class="botao-navegacao" onclick="trocarImagem()">➡</button>
@@ -58,7 +46,7 @@
             <p class="produto-preco">R$ 69,90</p>
 
             <div class="botoes-container">
-                <button class="buy-button" onclick="adicionarAoCarrinho(1)">Comprar</button>
+              <button class="buy-button" onclick="adicionarAoCarrinho(1, 'Combo Fitness 1', 69.90, 'laurinha.png')">Comprar</button>
                 <button class="cart-button">
                     <img src="imagens/cart.png" alt="Carrinho">
                 </button>
@@ -103,10 +91,20 @@
         </div>
     </footer>
     <script>
-        function adicionarAoCarrinho(produtoId) {
-            alert("Produto adicionado ao carrinho!");
-            // Aqui pode ser adicionado código para salvar no localStorage ou API
-        }
+     function adicionarAoCarrinho(id, nome, preco, imagem) {
+    const item = {
+        id: id,
+        nome: nome,
+        preco: preco,
+        imagem: imagem, // Caminho da imagem
+    };
+
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    carrinho.push(item);
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
+    alert(`${nome} adicionado ao carrinho!`);
+}
         let imagens = ["laurinha.png", "laura5.png", "laura3.png"];
 let index = 0;
 
@@ -164,6 +162,7 @@ document.querySelector('.btn-menor').addEventListener('click', function() {
     quantidade.textContent = parseInt(quantidade.textContent) - 1;
   }
 });
+
     </script>
 </body>
 </html>

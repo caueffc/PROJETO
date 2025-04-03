@@ -51,6 +51,12 @@
                 <h2>Contato</h2>
                 <p><strong>Email:</strong> contato@shefit.com</p>
                 <p><strong>Telefone:</strong> +55 11 99999-9999</p>
+                <a href="https://wa.me/5511999999999" target="_blank">
+                    <img src="imagens/10000484_processed.jpg" alt="WhatsApp da SheFit" style="width: 40px; height: auto;">
+                </a>
+                <a href="https://instagram.com/use.shefit/" target="_blank">
+                    <img src="imagens/logotipo-da-aplicacao-instagram-em-fundo-branco_1301901-2125_processed.png" alt="WhatsApp da SheFit" style="width: 40px; height: auto;">
+                </a>                
             </div>
         </div>
         <div class="footer-bottom">
@@ -58,8 +64,50 @@
         </div>
     </footer>
 
-    <script src="js/script.js">
+    <script>
+let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
+const cartItemsContainer = document.getElementById("cart-items");
+
+if (carrinho.length === 0) {
+    cartItemsContainer.innerHTML = "<p>Seu carrinho está vazio.</p>";
+} else {
+    carrinho.forEach(item => {
+        const itemElement = document.createElement("div");
+        itemElement.classList.add("cart-item");
+
+        // Ajustando para o preço ficar abaixo do nome
+        itemElement.innerHTML = `
+            <div class="cart-item-details">
+                <img src="${item.imagem}" alt="${item.nome}" style="width: 200px; height: auto; margin-right: 10px;">
+                <h3>${item.nome}</h3>
+                <p style="font-weight: bold; margin-top: 5px;">Preço: R$ ${item.preco.toFixed(2)}</p> <!-- Preço embaixo do nome -->
+                <button onclick="removerDoCarrinho(${item.id})">Remover</button>
+            </div>
+        `;
+
+        cartItemsContainer.appendChild(itemElement);
+    });
+
+    // Atualiza o total do carrinho
+    const total = carrinho.reduce((sum, item) => sum + item.preco, 0);
+    document.getElementById("cart-total").textContent = `${total.toFixed(2)} R$`;
+}
+
+
+
+
+// Função para remover um item do carrinho
+function removerDoCarrinho(produtoId) {
+    // Filtra o item que não deve ser removido
+    carrinho = carrinho.filter(item => item.id !== produtoId);
+
+    // Atualiza o localStorage com o carrinho modificado
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
+    // Atualiza a exibição dos itens do carrinho
+    location.reload(); // Recarrega a página para atualizar a lista
+}
     </script>
 </body>
 </html>

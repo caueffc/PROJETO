@@ -5,37 +5,104 @@
     padding: 0;
     
 }
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-.header-inner-content {
+body {
+    font-family: 'Arial', sans-serif; /* Fonte padrão */
+    line-height: 1.6; /* Altura da linha */
     display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o corpo ocupe toda a altura */
+    background-color: #ffffff; /* Cor de fundo */
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Garante que ela fique por cima dos outros elementos */
+    background-color: #1d1a16; /* Coloca a cor de fundo pra não ficar transparente */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Opcional: uma sombrinha pra destacar */
+  }
+  
+  .header-inner-content {
+    position: relative;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-}
-
-.nav-icon-container {
+    height: 70px; /* ajuste conforme necessário */
+  }
+  /* Logo */
+  .logo img {
+    margin-left: 10%;
+    width: 170px;
+    height: 90px;
+  }
+  
+  /* Centralizar menu */
+  .main-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .main-nav ul {
+        font-family: "Poppins", sans-serif;
+        font-weight: 190;
+        font-style: normal;
+    list-style: none;
+    display: flex;
+    gap: 140px;
+  }
+  
+  .main-nav li {
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  /* Ícones à direita */
+  .nav-icon-container {
+    margin-right: 1%;
     display: flex;
     align-items: center;
-    position: relative; /* Para o posicionamento do carrinho */
-}
-
-.nav-icon-container a {
-    display: flex;
-    align-items: center;
+    gap: 15px;
+  }
+  
+  /* Carrinho */
+  .nav-icon-container img {
+    margin-right: 10%;
+    width: 26px;
+    cursor: pointer;
+  }
+  
+  /* Botão de login */
+  .login-button {
+    background-color: #e63770;
+    margin-right: 10%;
+    padding: 6px 12px;
+    color: white;
+    border: none;
+    border-radius: 6px;
     text-decoration: none;
-    color: inherit; /* Para manter a cor do texto */
-}
+    font-size: 14px;
+    transition: 0.3s;
+  }
+  
+  .login-button:hover {
+    background-color: #e63770;
+  }
 
-#cart-count {
-    background-color: #ff0000; /* Cor de fundo para o contador */
-    color: white; /* Cor do texto do contador */
-    border-radius: 50%;
-    padding: 2px 5px;
-    margin-left: 5px;
-    font-size: 0.8em; /* Tamanho da fonte do contador */
-    position: absolute; /* Para posicionar o contador no ícone */
-    top: -5px; /* Ajuste conforme necessário */
-    right: -10px; /* Ajuste conforme necessário */
-}
+
+
+
+
+
 
 .header-bottom-side-left {
     margin-left: 20px;
@@ -78,216 +145,12 @@
 
 
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100px;
-}
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
-.search-bar {
-    display: flex;
-    align-items: center;
-    left: 30%;
-}
 
-.search-bar input[type="text"] {
-    padding: 5px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
-    width: 150px;
-    transition: width 0.4s;
-}
 
-.search-bar input[type="text"]:focus {
-    width: 200px; /* Expande a largura ao focar */
-    outline: none;
-}
-
-.search-bar button {
-    padding: 5px;
-    font-size: 16px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
-}
-
-.search-bar button:hover {
-    background-color: #555;
-}
-
-/* Navbar */
-.navbar {
-    background-color: #211e19;
-    padding: 1rem;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    box-shadow: 0px 10px 5px #211e19;
-    z-index: 99;
-    flex-direction: column;
-    align-items: center;
-    
-}
-
-.navbar > div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-}
-
-.logo img {
-    position: absolute;
-    top: -80%;
-    width: 200px;
-    height: 100px;
 
     
 
-
-}
-
-
-.navbar nav {
-    flex: fixed;
-    display: fixed;
-    justify-content: center;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0 30px;
-    align-items: center;
-    justify-content: center;
-
-}
-
-nav ul li {
-    font-size:larger;
-    color: white;
-    margin-right: 1.5rem;
-    cursor: pointer;
-    margin: 0 50px;
-    align-items: center;
-    justify-content: center;
-    padding-left: 2rem;
-    transition-duration: 1.2s;
-    font-size: 16px;
-    font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-
-    
-}
-
-nav ul li:hover {
-    transition: all 0.1s;
-    transform: translateY(-2.5px);
-}
-
-.nav-icon-container {
-    display: flex;
-    align-items: center;
-}
-
-.nav-icon-container img {
-    width: 30px;
-    cursor: pointer;
-}
-
-.nav-icon-container img:first-child {
-    margin-right: 1rem;
-}
-
-.menu-button {
-    display: none;
-    margin-right:3rem ;
-
-}
-.cart-button{
-    display: flex;
-    list-style: none;
-    margin: 0 30px;
-    align-items: center;
-    justify-content: center;
-    margin-left: 2rem;
-
-}
-@media (max-width: 768px) {
-    .navbar {
-        position: fixed; /* Mantém fixa */
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-    }
-}
-@media (max-width: 1168px) {
-    .navbar ul {
-        font-size: 3rem;
-        display: none; /* Esconde os itens do menu */
-    }
-    .navbar ul li { 
-        display: none;
-
-    }
-
-    .menu-toggle {
-        display: block;
-        background: none;
-        border: none;
-        color: white;
-        font-size: 24px;
-        cursor: pointer;
-    }
-}
-
-/* Estilo do botão de menu (hambúrguer) */
-.menu-toggle {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-    color: white;
-    background: none;
-    border: none;
-}
-
-/* Quando o menu for aberto, os itens aparecerão */
-.navbar.active ul {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    background-color: #211e19;
-    padding: 15px;
-    border-radius: 5px;
-}
-
-.navbar.active ul li {
-    margin: 10px 0;
-}
-
-    
-@media (max-width: 768px) {
-    .search-bar, .search-button {
-        display: none ; /* Esconde a barra e o botão de pesquisa */
-    }
-}
 
 /* Estilo do header com imagem de fundo */
 header {
@@ -314,7 +177,7 @@ header {
 .Fitzin{
     color: #c6008c;
   font-family: "Montserrat", sans-serif;
-  font-weight: 100;
+  font-weight: 200;
   font-optical-sizing: auto;
   font-style: normal;
   line-height: 0.002; /* Ajusta a altura da linha para diminuir o espaçamento interno */
@@ -541,26 +404,6 @@ h3.section-titles {
 
 
 
-.header::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 50px; /* Altura da sombra */
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent); /* Sombra que se dissipa */
-  }
-/* Pseudo-elemento para o fundo desfoque */
-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Cor preta com 30% de opacidade */
-    backdrop-filter: blur(3px); /* Desfoque de 10px */
-}
 
 
 
@@ -822,7 +665,7 @@ font-style: normal;
      footer {
         background-color: rgb(53, 51, 51);
         color: #f1f1f1;
-        padding: 10px 0;
+        padding: 50px 0;
         text-align: center;
     }
     
@@ -992,53 +835,47 @@ font-style: normal;
         font-size: 14px; /* Ajusta o tamanho da fonte do botão */
         padding: 10px; /* Diminui o padding para dispositivos menores */
     }
+    @media (max-width: 768px) {
+  
 
-.login-button {
-    color: white;
-    padding: 0.5rem 1rem; /* Ajuste o padding conforme necessário */
-    background-color: #c6008c; /* Cor de fundo */
-    text-decoration: none; /* Remove o sublinhado */
-    border-radius: 5px; /* Bordas arredondadas */
-}
-
-.login-button:hover {
-    background-color: #a5006d; /* Cor ao passar o mouse */
-    color: white;
-}
-.search-container {
-    display: flex;
-    align-items: center;
+        .main-nav {
+          position: static;
+          transform: none;
+          margin-top: 10px;
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+        }
+      
+        .main-nav ul {
+        display: none;
+          flex-direction: column;
+          gap: 10px;
+          align-items: center;
+        }
+      
+        .nav-icon-container {
+            display: flex;
+          margin-top: 10px;
+          gap: 10px;
+          align-items: center;
+          margin-right: 3rem;
+        }
+      
+        .login-button {
+          padding: 5px 10px;
+          font-size: 13px;
+          align-items: center;
+        }
+      
+        .cart-button {
+          width: 40px;
+          height: 40px;
+          align-items: center;
+        }
+      }
     
-    
-}
-/* Media Queries */
-@media (max-width: 02222px) {
-    .search-container {
-        display: flex; /* Usar flexbox para melhor alinhamento */
-        justify-content: center; /* Centraliza o conteúdo do container */
-        margin: 1rem 0; /* Espaçamento acima e abaixo do container */
-    }
 
-    .search-input {
-        width: 70%; /* Ajustar a largura do campo de pesquisa */
-        padding: 0.5rem; /* Espaçamento interno */
-        border: 1px solid #ccc; /* Borda padrão */
-        border-radius: 5px; /* Bordas arredondadas */
-        font-size: 1rem; /* Tamanho da fonte */
-    }
 
-    .search-button {
-        background-color: #211e19; /* Cor de fundo do botão */
-        color: #fff; /* Cor do texto */
-        border: none; /* Remover borda padrão */
-        border-radius: 5px; /* Bordas arredondadas */
-        padding: 0.5rem 1rem; /* Espaçamento interno */
-        margin-left: 0.5rem; /* Espaço entre o campo de pesquisa e o botão */
-        cursor: pointer; /* Muda o cursor ao passar o mouse */
-        transition: background-color 0.3s; /* Efeito de transição para o fundo */
-    }
 
-    .search-button:hover {
-        background-color: #f00; /* Cor de fundo ao passar o mouse */
-    }
-}
+

@@ -14,49 +14,89 @@ body {
     background-color: #ffffff; /* Cor de fundo */
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    justify-content: center; /* Centraliza os itens na horizontal */
-    align-items: center; /* Centraliza os itens na vertical */
-}
-
 .navbar {
-    background-color: #211e19; /* Cor da barra de navegação */
-    color: white; /* Cor do texto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Garante que ela fique por cima dos outros elementos */
+    background-color: #1d1a16; /* Coloca a cor de fundo pra não ficar transparente */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Opcional: uma sombrinha pra destacar */
+  }
+  
+  .header-inner-content {
+    position: relative;
     display: flex;
-    justify-content: center; /* Distribui espaço entre os itens */
-    align-items: center; /* Centraliza os itens verticalmente */
-}
-
-.navbar a {
-    font-size:larger;
-    color: white;
-    margin-right: 1.5rem;
-    cursor: pointer;
-    margin: 0 50px;
     align-items: center;
-    justify-content: center;
-    padding-left: 2rem;
-    transition-duration: 1.2s;
-    text-decoration: none; /* Sublinhado ao passar o mouse */
+    justify-content: space-between;
+    height: 70px; /* ajuste conforme necessário */
+  }
+  /* Logo */
+  .logo img {
+    margin-left: 10%;
+    width: 170px;
+    height: 90px;
+  }
+  
+  /* Centralizar menu */
+  .main-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .main-nav ul {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 190;
+    font-style: normal;
+list-style: none;
+display: flex;
+gap: 140px;
 }
-nav ul li:hover{
-    transition: all 0.3s;
-    transform: translateY(-2.5px);
-}
-.navbar a:hover {
-    transition: all 0.1s;
-    transform: translateY(-2.5px);
-    text-decoration: none; /* Sublinhado ao passar o mouse */
-}
-
+ 
+  
+  .main-nav li {
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  /* Ícones à direita */
+  .nav-icon-container {
+    margin-right: 1%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  /* Carrinho */
+  .nav-icon-container img {
+    margin-right: 10%;
+    width: 26px;
+    cursor: pointer;
+  }
+  
+  /* Botão de login */
+  .login-button {
+    margin-right: 10%;
+    padding: 6px 12px;
+    background-color: #e63770;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+  }
+  
+  .login-button:hover {
+    background-color: #e63770;
+  }
 /* Estilos para as seções */
 section {
     flex: 1; /* Faz a seção ocupar o espaço restante */
-    padding: 20px; /* Espaçamento interno */
+    padding: 90px; /* Espaçamento interno */
     max-width: 800px; /* Largura máxima da seção */
     margin: auto; /* Centraliza a seção */
     background-color: white; /* Fundo branco para a seção */
@@ -65,7 +105,7 @@ section {
 }
 
 h2 {
-    color: #333333; /* Cor dos títulos */
+    color: #ffffff; /* Cor dos títulos */
     margin-bottom: 20px; /* Margem abaixo dos títulos */
 }
 
@@ -110,11 +150,11 @@ h2 {
 }
 
 footer {
-        background-color: rgb(53, 51, 51);
-        color: #f1f1f1;
-        padding: 10px 0;
-        text-align: center;
-    }
+    background-color: rgb(53, 51, 51);
+    color: #f1f1f1;
+    padding: 50px 0;
+    text-align: center;
+}
     
     .footer-container {
         display: flex;
@@ -272,4 +312,43 @@ footer {
         width: 100%; /* Cada seção do footer ocupa toda a largura */
     }
 }
+@media (max-width: 768px) {
+  
+
+    .main-nav {
+      position: static;
+      transform: none;
+      margin-top: 10px;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .main-nav ul {
+    display: none;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+  
+    .nav-icon-container {
+        display: flex;
+      margin-top: 10px;
+      gap: 10px;
+      align-items: center;
+      margin-right: 3rem;
+    }
+  
+    .login-button {
+      padding: 5px 10px;
+      font-size: 13px;
+      align-items: center;
+    }
+  
+    .cart-button {
+      width: 40px;
+      height: 40px;
+      align-items: center;
+    }
+  }
 

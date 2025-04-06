@@ -15,50 +15,52 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Big+Shoulders+Inline:opsz,wght@10..72,100..900&family=Emblema+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght=1,900&family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="navbar">
-        <h1 class="logo">
-            <img class="logo2" src="imagens/Design sem nome (3)-Photoroom.png" alt="Logo da Shefit" style="height: 75px;"/>
-        </h1>
-        <nav>
-            <ul>
-                <li data-content="produtos"><a href="index.html">Produtos</a></li>
-                <li data-content="contato"><a href="#contato">Contato</a></li>
-                <li data-content="sobre"><a href="#sobre">Sobre</a></li>
-            </ul>
-        </nav>
-        
-    </div>
+<div class="navbar">
+  <div class="header-inner-content">
     
+    <h1 class="logo">
+      <img class="logo2" src="imagens/Design sem nome (3)-Photoroom.png" alt="Logo da Shefit"/>
+    </h1>
 
-        <div class="produto-imagem">
-            <button class="botao-navegacao" onclick="trocarImagem()">➡</button>
-            <img id="imagemProduto" src="laurinha.png" alt="Imagem Do Produto">
-            
-        <div class="produto-detalhes">
-            <h2>Combo Fitness 1</h2>
-            <p class="produto-descricao">
-                Conjunto fitness confortável e estiloso para seu treino. Com tecido de alta qualidade e modelagem ajustável, garantindo máximo desempenho.
-            </p>
-            <p><strong>Material:</strong> Poliéster e Elastano</p>
-            <p><strong>Tamanhos disponíveis:</strong> P, M, G</p>
-            <p><strong>Cor:</strong> Azul</p>
-            <p class="produto-preco">R$ 69,90</p>
+    <nav class="main-nav">
+      <ul>
+        <li data-content="produtos">Produtos</li>
+        <li data-content="contato">Contato</li>
+        <li data-content="sobre">Sobre</li>
+      </ul>
+    </nav>
 
-            <div class="botoes-container">
-              <button class="buy-button" onclick="adicionarAoCarrinho(1, 'Combo Fitness 1', 69.90, 'laurinha.png')">Comprar</button>
-                <button class="cart-button">
-                    <img src="imagens/cart.png" alt="Carrinho">
-                </button>
-                <div class="controle-quantidade">
-                    <button class="btn-menor">-</button>
-                    <span class="quantidade">1</span>
-                    <button class="btn-maior">+</button>
-                  </div>
-                </div>
-            </div>
-        </div>
+    <div class="nav-icon-container">
+      <a href="carrinho.html"><img src="imagens/cart.png" alt="Carrinho"></a>
+      <a href="login.html" class="login-button">Login</a>
     </div>
+
+  </div>
+</div>
+    
+<div class="produto-container">
+  <div class="produto-imagem">
+    <button class="botao-navegacao" onclick="trocarImagem()">➡</button>
+    <img id="imagemProduto" src="laurinha.png" alt="Imagem Do Produto">
+  </div>
+
+  <div class="produto-detalhes">
+    <h2>Combo Fitness 1</h2>
+    <p class="produto-descricao">
+      Conjunto fitness confortável e estiloso para seu treino. Com tecido de alta qualidade e modelagem ajustável, garantindo máximo desempenho.
+    </p>
+    <p><strong>Material:</strong> Poliéster e Elastano</p>
+    <p><strong>Tamanhos disponíveis:</strong> P, M, G</p>
+    <p><strong>Cor:</strong> Azul</p>
+    <p class="produto-preco">R$ 69,90</p>
+
+    <div class="botoes-container">
+      <button class="buy-button" onclick="adicionarAoCarrinho(1, 'Combo Fitness 1', 69.90, 'laurinha.png')">
+        Comprar
+      </button>
+    </div>
+  </div>
+</div>
 
     <footer>
         <div class="footer-container">
@@ -91,7 +93,8 @@
         </div>
     </footer>
     <script>
-     function adicionarAoCarrinho(id, nome, preco, imagem) {
+         
+         function adicionarAoCarrinho(id, nome, preco, imagem) {
     const item = {
         id: id,
         nome: nome,

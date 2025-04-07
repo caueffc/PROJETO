@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style2.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Lilita+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lilita+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght=0,900;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Big+Shoulders+Inline:opsz,wght@10..72,100..900&family=Emblema+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght=1,900&family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
+</head>
     <title>Carrinho de Compras</title>
 </head>
 <body>
@@ -27,6 +36,13 @@
             <a href="login.html" class="login-button">Login</a>
           </div>
       
+        </div>
+      </div>
+       <!-- MODAL -->
+       <div id="meuModal" class="modal">
+        <div class="modal-conteudo">
+          <span class="fechar">&times;</span>
+          <p id="mensagemModal"></p>
         </div>
       </div>
 
@@ -74,6 +90,35 @@
     </footer>
 
     <script>
+             
+      const itensMenu = document.querySelectorAll('.main-nav li');
+  const modal = document.getElementById('meuModal');
+  const fechar = document.querySelector('.fechar');
+  const mensagem = document.getElementById('mensagemModal');
+
+  const textos = {
+    produtos: 'Confira nossos produtos incríveis para elevar seu treino!',
+    contato: 'Entre em contato conosco pelo Instagram ou WhatsApp /  @use.shefit - (24)99999-9999',
+    sobre: 'A SheFit é muito mais do que uma marca de roupas fitness. Somos um movimento que acredita no poder, na força e na beleza de cada mulher. Criamos peças que unem conforto, estilo e funcionalidade para que você se sinta confiante em todos os momentos — seja na academia, no seu treino ao ar livre ou no seu dia a dia.'
+  }
+
+  itensMenu.forEach(item => {
+    item.addEventListener('click', () => {
+      const tipo = item.getAttribute('data-content');
+      mensagem.textContent = textos[tipo] || 'Conteúdo não encontrado.';
+      modal.style.display = 'block';
+    });
+  });
+
+  fechar.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
 let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
 const cartItemsContainer = document.getElementById("cart-items");

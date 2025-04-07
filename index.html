@@ -22,7 +22,6 @@
 <body>
     <div class="navbar">
         <div class="header-inner-content">
-          
           <h1 class="logo">
             <img class="logo2" src="imagens/Design sem nome (3)-Photoroom.png" alt="Logo da Shefit"/>
           </h1>
@@ -39,7 +38,14 @@
             <a href="carrinho.html"><img src="imagens/cart.png" alt="Carrinho"></a>
             <a href="login.html" class="login-button">Login</a>
           </div>
+        </div>
+      </div>
       
+      <!-- MODAL -->
+      <div id="meuModal" class="modal">
+        <div class="modal-conteudo">
+          <span class="fechar">&times;</span>
+          <p id="mensagemModal"></p>
         </div>
       </div>
     <header>
@@ -278,49 +284,34 @@
     </footer>
 
 <script>
-   // Selecionando todos os itens da lista
-const items = document.querySelectorAll('nav ul li');
+    const itensMenu = document.querySelectorAll('.main-nav li');
+  const modal = document.getElementById('meuModal');
+  const fechar = document.querySelector('.fechar');
+  const mensagem = document.getElementById('mensagemModal');
 
-// Selecionando o modal e o texto que vai ser alterado
-const modal = document.getElementById("modal");
-const modalText = document.getElementById("modal-text");
-const close = document.getElementById("close");
-
-// Exibindo o modal com base no clique
-items.forEach(item => {
-  item.addEventListener('click', function() {
-    const content = item.getAttribute('data-content');
-    
-    // Definindo o texto do modal de acordo com o item clicado
-    switch(content) {
-      case 'produtos':
-        modalText.textContent = 'Na SheFit, cada peça é pensada para oferecer conforto, estilo e desempenho para mulheres que amam se movimentar. Nossa coleção conta com leggings de alta compressão, tops anatômicos, shorts flexíveis e muito mais, tudo com tecidos respiráveis e modelagens que valorizam o corpo.!';
-        break;
-      case 'contato':
-        modalText.innerHTML = 'Aqui você pode entrar em contato conosco!<br> @use.shefit <br> (24)99999-9999';
-        break;
-      case 'sobre':
-        modalText.textContent = 'A SheFit é uma marca apaixonada por transformar a experiência de mulheres no universo fitness. Nascemos com a missão de oferecer roupas de alta qualidade, conforto e estilo para mulheres que buscam desempenho, confiança e liberdade durante seus treinos. Cada peça é pensada para se adaptar ao corpo feminino, garantindo o máximo de mobilidade e segurançaNossa visão é ser referência no mercado de moda fitness, promovendo não apenas qualidade, mas também inclusão e autoestima para todas as mulheres!'
-      default:
-    }
-    
-    // Exibindo o modal
-    modal.style.display = "block";
-  });
-});
-
-// Fechando o modal quando o usuário clicar no "x"
-close.addEventListener('click', function() {
-  modal.style.display = "none";
-});
-
-// Fechando o modal se o usuário clicar fora dele
-window.addEventListener('click', function(event) {
-  if (event.target === modal) {
-    modal.style.display = "none";
+  const textos = {
+    produtos: 'Confira nossos produtos incríveis para elevar seu treino!',
+    contato: 'Entre em contato conosco pelo Instagram ou WhatsApp /  @use.shefit - (24)99999-9999',
+    sobre: 'A SheFit é muito mais do que uma marca de roupas fitness. Somos um movimento que acredita no poder, na força e na beleza de cada mulher. Criamos peças que unem conforto, estilo e funcionalidade para que você se sinta confiante em todos os momentos — seja na academia, no seu treino ao ar livre ou no seu dia a dia.'
   }
-});
 
+  itensMenu.forEach(item => {
+    item.addEventListener('click', () => {
+      const tipo = item.getAttribute('data-content');
+      mensagem.textContent = textos[tipo] || 'Conteúdo não encontrado.';
+      modal.style.display = 'block';
+    });
+  });
+
+  fechar.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
 
 document.addEventListener('DOMContentLoaded', () => {
 const filterButtons = document.querySelectorAll('.filter-button');

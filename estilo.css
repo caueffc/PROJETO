@@ -148,13 +148,18 @@ body {
 
 
 
-
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* impede rolagem horizontal */
+  }
     
 
 
 /* Estilo do header com imagem de fundo */
 header {
-    background-image: url('roupas/academiacopy.png');
+    background-image: url('roupas/academiacopy.png' );
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -162,6 +167,8 @@ header {
     display: flex;
     align-items: center;
     text-align: center;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+    max-width: 100%;
     
 }
 
@@ -175,7 +182,7 @@ header {
     line-height: 1.2; /* Ajusta a altura da linha para diminuir o espaçamento interno */
 }
 .Fitzin{
-    color: #c6008c;
+    color: #d69302;
   font-family: "Montserrat", sans-serif;
   font-weight: 200;
   font-optical-sizing: auto;
@@ -404,82 +411,56 @@ h3.section-titles {
 
 
 
-
-
-
-
-/* Estilização do modal */
-/* Estilo do modal */
-/* Estilo geral do modal */
 .modal {
-    display: none; /* Esconde o modal por padrão */
+    display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 9999;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.6); /* Fundo semitransparente */
-    padding-top: 100px; /* Distância do topo */
-    text-align: center;
+    background-color: rgba(0,0,0,0.5);
   }
   
-  /* Estilo do conteúdo do modal */
-  .modal-content {
+  .modal-conteudo {
     background-color: #fff;
-    margin: auto;
+    margin: 15% auto;
     padding: 30px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
-    border-radius: 10px; /* Bordas arredondadas */
-    text-align: left; /* Alinhamento do texto */
-    color: #333;
-    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  .modal-conteudo p {
     font-size: 16px;
+    color: #333;
   }
   
-  /* Estilo da imagem dentro do modal */
-  .modal-content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px; /* Bordas arredondadas para a imagem */
-    margin-bottom: 15px; /* Espaço abaixo da imagem */
-  }
-  
-  /* Estilo para o botão de fechar */
-  .close {
+  .fechar {
     color: #aaa;
-    font-size: 30px;
+    float: right;
+    font-size: 24px;
     font-weight: bold;
-    position: absolute;
-    top: 10px;
-    right: 20px;
     cursor: pointer;
-    transition: color 0.3s ease;
   }
   
-  .close:hover,
-  .close:focus {
+  .fechar:hover {
     color: #000;
-    text-decoration: none;
   }
   
-  /* Animação para mostrar o modal */
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
   }
   
-  .modal-content {
-    animation: fadeIn 0.5s ease-in;
-  }
+
+
+
+
 .filter {
     flex-direction: column;
     align-items: center;
@@ -856,10 +837,11 @@ font-style: normal;
       
         .nav-icon-container {
             display: flex;
-          margin-top: 10px;
+            margin-bottom: 1%;
           gap: 10px;
           align-items: center;
           margin-right: 3rem;
+          
         }
       
         .login-button {
@@ -874,7 +856,6 @@ font-style: normal;
           align-items: center;
         }
       }
-    
 
 
 

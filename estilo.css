@@ -182,9 +182,10 @@ header {
     line-height: 1.2; /* Ajusta a altura da linha para diminuir o espaçamento interno */
 }
 .Fitzin{
-    color: #d69302;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 200;
+    color: #ff0055;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 350;
   font-optical-sizing: auto;
   font-style: normal;
   line-height: 0.002; /* Ajusta a altura da linha para diminuir o espaçamento interno */

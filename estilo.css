@@ -13,22 +13,25 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif; /* Fonte padrão */
-    line-height: 1.6; /* Altura da linha */
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Garante que o corpo ocupe toda a altura */
-    background-color: #ffffff; /* Cor de fundo */
-}
-.navbar {
+    min-height: 100vh;
+    background-color: #ffffff;
+    margin: 0;
+  }
+  
+  .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Garante que ela fique por cima dos outros elementos */
-    background-color: #1d1a16; /* Coloca a cor de fundo pra não ficar transparente */
+    z-index: 1000;
+    background-color: #1d1a16;
     padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Opcional: uma sombrinha pra destacar */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    
   }
   
   .header-inner-content {
@@ -36,16 +39,18 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 70px; /* ajuste conforme necessário */
+    height: 70px;
+    padding: 0 20px;
   }
+  
   /* Logo */
   .logo img {
-    margin-left: 10%;
+    margin-left: 5%;
     width: 170px;
     height: 90px;
   }
   
-  /* Centralizar menu */
+  /* Menu centralizado */
   .main-nav {
     position: absolute;
     left: 50%;
@@ -53,9 +58,9 @@ body {
   }
   
   .main-nav ul {
-        font-family: "Poppins", sans-serif;
-        font-weight: 190;
-        font-style: normal;
+    font-family: "Poppins", sans-serif;
+    font-weight: 190;
+    font-style: normal;
     list-style: none;
     display: flex;
     gap: 140px;
@@ -66,6 +71,7 @@ body {
     cursor: pointer;
     font-size: 16px;
   }
+  
   /* Ícones à direita */
   .nav-icon-container {
     margin-right: 1%;
@@ -74,7 +80,6 @@ body {
     gap: 15px;
   }
   
-  /* Carrinho */
   .nav-icon-container img {
     margin-right: 10%;
     width: 26px;
@@ -95,12 +100,102 @@ body {
   }
   
   .login-button:hover {
-    background-color: #e63770;
+    background-color: #c72e5f;
   }
+  
+ /* Botão padrão (mobile) */
+.hamburger {
+    display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  background: none;
+  border: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+  /* Quando clicado */
+.hamburger.active {
+    transform: rotate(90deg); /* ou 180deg, se quiser */
+    color: #e63770; /* muda a cor quando ativo */
+  }
+  
+  /* RESPONSIVO */
+  @media (max-width:1008px) {
+    .header-inner-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      height: 70px;
+      position: relative;
+    }
+  
+    .hamburger {
+      display: block;
+      top: 20%;
+      font-size: 28px;
+      cursor: pointer;
+      color: rgb(255, 255, 255);
+      z-index: 11;
+      margin: 0;
 
-
-
-
+    }
+  
+    .logo {
+      position: absolute;
+      left: 45%;
+      transform: translateX(-50%);
+      top: 60%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+  
+    .logo img {
+      width: 130px;
+      height: auto;
+    }
+  
+    .nav-icon-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 1001;
+    }
+  
+    .login-button {
+      padding: 5px 10px;
+      font-size: 13px;
+    }
+  
+    .cart-button {
+      width: 26px;
+      height: 26px;
+    }
+  
+    .main-nav {
+      position: static;
+      width: 100%;
+    }
+  
+    .main-nav ul {
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      background-color: #1d1a16;
+      width: 100%;
+      padding: 20px 0;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      z-index: 999;
+    }
+  
+    .main-nav ul.show {
+      display: flex;
+    }
+  }
+  
 
 
 
@@ -817,46 +912,7 @@ font-style: normal;
         font-size: 14px; /* Ajusta o tamanho da fonte do botão */
         padding: 10px; /* Diminui o padding para dispositivos menores */
     }
-    @media (max-width: 768px) {
-  
 
-        .main-nav {
-          position: static;
-          transform: none;
-          margin-top: 10px;
-          width: 100%;
-          align-items: center;
-          justify-content: center;
-        }
-      
-        .main-nav ul {
-        display: none;
-          flex-direction: column;
-          gap: 10px;
-          align-items: center;
-        }
-      
-        .nav-icon-container {
-            display: flex;
-            margin-bottom: 1%;
-          gap: 10px;
-          align-items: center;
-          margin-right: 3rem;
-          
-        }
-      
-        .login-button {
-          padding: 5px 10px;
-          font-size: 13px;
-          align-items: center;
-        }
-      
-        .cart-button {
-          width: 40px;
-          height: 40px;
-          align-items: center;
-        }
-      }
 
 
 

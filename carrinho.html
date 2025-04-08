@@ -16,28 +16,33 @@
     <title>Carrinho de Compras</title>
 </head>
 <body>
-    <div class="navbar">
-        <div class="header-inner-content">
-          
-          <h1 class="logo">
-            <img class="logo2" src="imagens/Design sem nome (3)-Photoroom.png" alt="Logo da Shefit"/>
-          </h1>
-      
-          <nav class="main-nav">
-            <ul>
-              <li data-content="produtos">Produtos</li>
-              <li data-content="contato">Contato</li>
-              <li data-content="sobre">Sobre</li>
-            </ul>
-          </nav>
-      
-          <div class="nav-icon-container">
-            <a href="carrinho.html"><img src="imagens/cart.png" alt="Carrinho"></a>
-            <a href="login.html" class="login-button">Login</a>
-          </div>
-      
-        </div>
+  <div class="navbar">
+    <div class="header-inner-content">
+  
+      <!-- Ícone do menu hambúrguer (aparece só no mobile) -->
+      <div class="hamburger" id="hamburger">
+        ☰
       </div>
+  
+      <h1 class="logo">
+        <img class="logo2" src="imagens/Design sem nome (3)-Photoroom.png" alt="Logo da Shefit"/>
+      </h1>
+  
+      <nav class="main-nav">
+        <ul>
+          <li data-content="produtos">Produtos</li>
+          <li data-content="contato">Contato</li>
+          <li data-content="sobre">Sobre</li>
+        </ul>
+      </nav>
+  
+      <div class="nav-icon-container">
+        <a href="carrinho.html"><img src="imagens/cart.png" alt="Carrinho"></a>
+        <button class="login-button">Login</button>
+      </div>
+  
+    </div>
+  </div>
        <!-- MODAL -->
        <div id="meuModal" class="modal">
         <div class="modal-conteudo">
@@ -45,7 +50,6 @@
           <p id="mensagemModal"></p>
         </div>
       </div>
-
     <section id="carrinho">
         <h2>Seu Carrinho de Compras</h2>
         <div class="cart-items" id="cart-items">
@@ -55,6 +59,7 @@
             Total: <span id="cart-total">0,00 R$</span>
             <button id="checkout-button">Finalizar Compra</button>
         </div>
+        <a href="index.html" class="btn-voltar">🡐</a>
     </section>
 
     <footer>
@@ -90,6 +95,13 @@
     </footer>
 
     <script>
+       const hamburger = document.getElementById('hamburger');
+const navMenu = document.querySelector('.main-nav ul');
+
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('show');
+  hamburger.classList.toggle('active');
+});
              
       const itensMenu = document.querySelectorAll('.main-nav li');
   const modal = document.getElementById('meuModal');
